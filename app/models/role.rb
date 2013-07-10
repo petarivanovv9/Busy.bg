@@ -1,6 +1,9 @@
 class Role < ActiveRecord::Base
-  attr_accessible :accountast, :searcher, :softwareEngineer, :teacher
+  validates_presence_of :name
+  validates_uniqueness_of :name
+
+  attr_accessible :name
 
   has_many :role_activities
-  belongs_to :user
+  has_many :users
 end

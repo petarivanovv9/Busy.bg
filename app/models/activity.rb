@@ -1,5 +1,9 @@
 class Activity < ActiveRecord::Base
-  attr_accessible :history, :math, :mobile, :web
+   validates_presence_of :name
+   validates_uniqueness_of :name
+
+  attr_accessible :name
 
   has_many :role_activities
+  has_many :user_activities
 end
