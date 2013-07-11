@@ -1,6 +1,13 @@
 TheBusyNet::Application.routes.draw do
+  devise_for :users
+  match "users/properties", to: 'users#properties',  as: 'currnet_user_properties', via: :get
+
+  match 'users/save_properties' => 'users#save'
+  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
