@@ -1,5 +1,5 @@
 <%= link_to ' SIng Out', destroy_user_session_path, method: :delete %>
-<form action="/users/save_properties" method="post">
+<%= form_tag action="/users/save_properties" do %>
     <select  name="city_id">
 	    <% @cities.each do |city| %>
 	         <option value= "<%=city.id%>" > <%=city.name %> </option>
@@ -11,5 +11,5 @@
 	    <% end %>
 	</select>
   <input type="submit" value="Submit">
-</form>
+<% end %>
 
