@@ -1,0 +1,3 @@
+[submodule "libv8"]
+	path = libv8
+	url = git://github.com/cowboyd/libv8.git
