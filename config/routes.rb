@@ -3,9 +3,10 @@ TheBusyNet::Application.routes.draw do
   match "users/properties", to: 'users#properties',  as: 'currnet_user_properties', via: :get
 
   match 'users/save_properties' => 'users#save'
-  
+  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' 
+  end
 
-  #match 'users/sign_out' => 'users/sign_in'
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -3,11 +3,9 @@
   
   <h2> Sign in </h2>
 
-  <div><input type="email" class="text-field" placeholder="E-mail" /><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :autofocus => true, :class=>"text-field", :placeholder=>"E-mail" %></div>
 
-  <div><input type="password" class="text-field" placeholder="Password" /><br />
-  <%= f.password_field :password %> </div>
+  <%= f.password_field :password, :class => "text-field", :placeholder => "Password" %> </div>
 
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
@@ -20,4 +18,3 @@
 
   <%= render "devise/shared/links" %>
 <% end %>
-
