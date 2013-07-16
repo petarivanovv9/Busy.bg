@@ -15,6 +15,16 @@ class UsersController < ApplicationController
 		current_user.role_id = params[:role_id]
 		current_user.save
 
+    activity = params[:activity_id]
+
+    useractivity = UserActivity.new
+    useractivity.user_id = current_user.id
+  
+    activity.each do |i|
+      useractivity.activity_id = i
+    end
+    useractivity.save
+
 		render nothing: true
 	end
 end
