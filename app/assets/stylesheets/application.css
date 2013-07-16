@@ -9,8 +9,8 @@ h2 {
 }
 
 form {
-	width: 280px;
-	height: 330px;
+	width: 300px;
+	height: 360px;
 	margin: 100px auto;
 	background: white;
 	border-radius: 3px;
@@ -20,7 +20,7 @@ form {
 }
 
 form.register{																				/* Register form height */
-	height: 310px;
+	height: 450px;
 }
 
 form .text-field {																			/* Input fields; Username, Password etc. */
@@ -84,3 +84,11 @@ form .button:active {
 .hidden{
 	visibility: hidden;
 }
+
+img {
+	height:	130px; 
+	width: 800px;
+}
+
+
+Read more: http://www.ehow.com/how_2082296_style-image-css.html#ixzz2ZEme756B

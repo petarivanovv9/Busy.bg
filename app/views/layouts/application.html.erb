@@ -7,10 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<div align="center">
+		<%= image_tag("logo.png", :alt => "logo feed") %> 
+	</div>
+
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+ 
+
 <%= yield %>
+
 
 </body>
 </html>
