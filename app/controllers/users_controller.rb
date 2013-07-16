@@ -21,9 +21,12 @@ class UsersController < ApplicationController
     useractivity.user_id = current_user.id
   
     activity.each do |i|
+      useractivity = UserActivity.new
+      useractivity.user_id = current_user.id
       useractivity.activity_id = i
+      useractivity.save
     end
-    useractivity.save
+    
 
 		render nothing: true
 	end
