@@ -1,4 +1,7 @@
 TheBusyNet::Application.routes.draw do
+  resources :ads
+
+
   devise_for :users
   match "users/properties", to: 'users#properties',  as: 'currnet_user_properties', via: :get
 

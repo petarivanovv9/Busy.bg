@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711055203) do
+ActiveRecord::Schema.define(:version => 20130717084049) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(:version => 20130711055203) do
     t.string   "name"
   end
 
+  create_table "ad_activities", :force => true do |t|
+    t.integer  "ad_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "actitvity_id"
+  end
+
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -52,6 +59,16 @@ ActiveRecord::Schema.define(:version => 20130711055203) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "ads", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "max_price"
+    t.integer  "city_id"
+    t.date     "deadline"
+    t.integer  "period"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -61,13 +78,6 @@ ActiveRecord::Schema.define(:version => 20130711055203) do
   create_table "role_activities", :force => true do |t|
     t.integer  "role_id"
     t.integer  "activity_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "role_categories", :force => true do |t|
-    t.integer  "role_id"
-    t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -101,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20130711055203) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "price"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  acitvity_id: 1
+  ad_id: 1
+
+two:
+  acitvity_id: 1
+  ad_id: 1

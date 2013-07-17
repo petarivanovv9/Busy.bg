@@ -17,4 +17,5 @@ class User < ActiveRecord::Base
   belongs_to :role
   belongs_to :city
   has_many :user_activities
+  has_many :ads
 end

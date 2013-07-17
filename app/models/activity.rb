@@ -6,4 +6,5 @@ class Activity < ActiveRecord::Base
 
   has_many :role_activities
   has_many :user_activities
+  has_many :ad_activities
 end

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @ad.user_id %>
+</p>
+
+<p>
+  <b>Max price:</b>
+  <%= @ad.max_price %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @ad.city_id %>
+</p>
+
+<p>
+  <b>Deadline:</b>
+  <%= @ad.deadline %>
+</p>
+
+<p>
+  <b>Period:</b>
+  <%= @ad.period %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>

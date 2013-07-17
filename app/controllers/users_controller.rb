@@ -26,9 +26,12 @@ class UsersController < ApplicationController
       useractivity.activity_id = i
       useractivity.save
     end
-    
 
 		render nothing: true
 	end
+
+  def index
+    @users= User.all
+  end
 end
 
