@@ -1,0 +1,103 @@
+.tt-wrapper{
+	padding-top: 110px;
+	width: 900px;
+	height: 100px;
+	margin: 0 auto;
+}
+.tt-wrapper li{
+	float: left;
+	 list-style-type:none;
+}
+.tt-wrapper li a{
+   
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+	outline: none;
+	background: transparent url('growcase_the_social_gunman_icons.png') no-repeat top center;
+	text-indent: -9000px;
+	position: relative;
+}
+.tt-wrapper li a:hover{
+   
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+	outline: none;
+	background: transparent url('something.png') no-repeat top left;
+	text-indent: -9000px;
+	position: relative;
+}
+.tt-wrapper li .tt-gplus,.tt-wrapper li .tt-gplus:hover{
+    background-position: 0px 0px;
+}
+.tt-wrapper li .tt-twitter, .tt-wrapper li .tt-twitter:hover{
+    background-position: -200px 0px;
+}
+.tt-wrapper li .tt-dribbble, .tt-wrapper li .tt-dribbble:hover{
+    background-position: -400px 0px;
+}
+.tt-wrapper li a span{
+	width: 200px;
+	height: auto;
+	line-height: 30px;
+	padding: 10px;
+	left: 50%;
+	margin-left: -64px;
+    font-family:"Bebas Neue";
+	font-weight: 400;	
+	font-style: bold;
+	font-size: 14px;
+	color: #5fb324;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	border: 2px solid #ccff33;
+	background: rgba(204,255,51,0.4);
+	text-indent: 0px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 200px;
+	opacity: 0;
+	visibility: visible;
+	pointer-events: none;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+	-webkit-transform: translate(35px) rotate(25deg) scale(1.5);
+	-moz-transform: translate(35px) rotate(25deg) scale(1.5);
+	-o-transform: translate(35px) rotate(25deg) scale(1.5);
+	-ms-transform: translate(35px) rotate(25deg) scale(1.5);
+	transform: translate(35px) rotate(25deg) scale(1.5);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.tt-wrapper li a span:before,
+.tt-wrapper li a span:after{
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 50%;
+	margin-left: -9px;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid rgba(204,255,51,1);
+}
+.tt-wrapper li a span:after{
+	bottom: -14px;
+	margin-left: -10px;
+	border-top: 10px solid #ccff33;
+}
+.tt-wrapper li a:hover span{
+	visibility: visible;
+	opacity: 0.9;
+	-webkit-transform: translate(0px) rotate(0deg) scale(1);
+	-moz-transform: translate(0px) rotate(0deg) scale(1);
+	-o-transform: translate(0px) rotate(0deg) scale(1);
+	-ms-transform: translate(0px) rotate(0deg) scale(1);
+	transform: translate(0px) rotate(0deg) scale(1);
+}

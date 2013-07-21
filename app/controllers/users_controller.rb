@@ -1,4 +1,3 @@
-
 class UsersController < ApplicationController
  	protect_from_forgery
 
@@ -29,9 +28,6 @@ class UsersController < ApplicationController
 
 		render nothing: true
 	end
-
-  def index
-    @users= User.all
-  end
+  
 end
 

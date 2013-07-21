@@ -1,6 +1,11 @@
 TheBusyNet::Application.routes.draw do
   resources :ads
 
+  root to: 'menu#index'
+
+  match "/teachers", to: 'teachers#index'
+  match "/its", to: 'its#index'
+  match "/accountants", to: 'accountants#index'
 
   devise_for :users
   match "users/properties", to: 'users#properties',  as: 'currnet_user_properties', via: :get
