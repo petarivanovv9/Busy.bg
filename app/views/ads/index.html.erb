@@ -1,20 +1,4 @@
 <h1>Listing ads</h1>
-<form>
-<select  id='select-city', name="city_id">
-        <option value= "" > </option>
-        <% @cities.each do |city| %>
-             <option value= "<%=city.id%>" > <%= city.name %> </option>
-        <% end %>
-    </select>
-    <select  id='select-activyty', name="activity_id">
-        <option value= "" > </option>
-        <% @activities.each do |activity| %>
-             <option value= "<%=activity.id%>" > <%= activity.name %> </option>
-        <% end %>
-    </select>
-    <input type="submit" value="Find", class="button">
-</form>
- 
 
 <table>
   <tr>
