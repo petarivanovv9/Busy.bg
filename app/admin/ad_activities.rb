@@ -1,3 +1,3 @@
-ActiveAdmin.register AdActivities do
+ActiveAdmin.register AdActivity do
   
 end
