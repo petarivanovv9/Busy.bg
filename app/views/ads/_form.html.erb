@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :max_price %><br />
     <%= f.number_field :max_price %>
   </div>
   <div class="field">
     <%= f.label :city_id %><br />
-    <%= f.number_field :city_id %>
+    <%= f.collection_select :city_id, City.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :deadline %><br />
@@ -35,3 +31,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

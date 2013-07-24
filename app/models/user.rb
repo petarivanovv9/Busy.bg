@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   attr_accessible :city_id, :email, :name, :role_id
-
+  
   belongs_to :role
   belongs_to :city
   has_many :user_activities

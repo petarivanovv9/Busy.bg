@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     end
 
 		render nothing: true
-	end
-  
+	end 
 end
 
