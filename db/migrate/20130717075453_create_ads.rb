@@ -4,7 +4,7 @@ class CreateAds < ActiveRecord::Migration
       t.integer :user_id
       t.integer :max_price
       t.integer :city_id
-      t.timestamps :deadline
+      t.date :deadline
       t.integer :period
 
       t.timestamps
