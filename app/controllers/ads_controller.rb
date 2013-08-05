@@ -4,8 +4,10 @@ class AdsController < InheritedResources::Base
     @cities = City.all
     @activities = Activity.all
     
-    if params[:city_id].present?
-      @ads = @ads.where(city_id: params[:city_id])
+    @ads = @ads.where(city_id: params[:city_id]) if params[:city_id].present?
+    
+    if params[:activity_ids].present?
+      @ads.joins(:ad_activities).where(activity_id: params[:activity_ids]) 
     end
   end
  

@@ -1,4 +1,23 @@
 <a href = "/ads/new">  Направи обява </a>
+
+<form>
+<select  id='select-city', name="city_id">
+      <option value= "" > </option>
+      <% @cities.each do |city| %>
+            <option value= "<%=city.id%>" > <%= city.name %> </option>
+      <% end %>
+   </select>
+   <select  id='select-activity', name="activity_id">
+       <option value= "" > </option>
+      <% @activities.each do |activity| %>
+          <option value= "<%=activity.id%>" > <%= activity.name %> </option>
+    <% end %>
+</select>
+
+
+    <input type="submit" value="Find", class="button">
+</form>
+
 <br />
 
 <% @its.each do |it| %>

@@ -5,5 +5,6 @@ class Role < ActiveRecord::Base
   attr_accessible :name
 
   has_many :role_activities
+  has_many :activities, through: :role_activities
   has_many :users
 end

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :ad_activities %><br />
+    <%= f.select :ad_activities, Activity.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
+  </div>
+  <div class="field">
     <%= f.label :max_price %><br />
     <%= f.number_field :max_price %>
   </div>
