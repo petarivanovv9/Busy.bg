@@ -1,6 +1,6 @@
 TheBusyNet::Application.routes.draw do
   resources :ads
-
+  
   root to: 'menu#index'
 
   match "/teachers", to: 'teachers#index'
@@ -15,6 +15,7 @@ TheBusyNet::Application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy' 
   end
 
+  root to: 'users#index'
   match "get_activities/:role_id", to: 'role_activities#get_activities', via: [:post, :get]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
