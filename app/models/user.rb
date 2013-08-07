@@ -11,9 +11,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_presence_of :email
   validates_uniqueness_of :email
-  validates_presence_of :city_id
-  validates_presence_of :role_id
-
+  
   attr_accessible :city_id, :email, :name, :role_id
   
   belongs_to :role
