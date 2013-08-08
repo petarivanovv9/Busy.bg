@@ -1,22 +1,44 @@
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
 
-<%= form_tag action="/users/save_properties" do %>
+<%= form_tag action="/users/profile", :multipart => true  do %>
     <select  id='select-city', name="city_id">
-	    <option value= "" > </option>
-	    <% @cities.each do |city| %>
-	         <option value= "<%=city.id%>" > <%= city.name %> </option>
-	    <% end %>
-	</select>
-	<select  id='select-role', name="role_id">
-	    <option value= "" > </option>
-	    <% @roles.each do |role| %>
-	         <option value= "<%=role.id%>" > <%= role.name %> </option>
-	    <% end %>
-	</select>
+      <option value= "" > </option>
+      <% @cities.each do |city| %>
+           <option value= "<%=city.id%>" > <%= city.name %> </option>
+      <% end %>
+  </select>
+  <select  id='select-role', name="role_id">
+      <option value= "" > </option>
+      <% @roles.each do |role| %>
+           <option value= "<%=role.id%>" > <%= role.name %> </option>
+      <% end %>
+  </select>
 
-		<!-- <input id="select-activity" type="checkbox" name="activity_id" value="mlb", >  -->
-	<div id='select-activity'>	
-	</div>
+    <!-- <input id="select-activity" type="checkbox" name="activity_id" value="mlb", >  -->
+  <div id='select-activity'>  
+  </div>
+  <div>
+   Phone: <input type="text" name="phone">
+
+ </div>
+
+  <div>
+   Portfolio Link: <input type="text" name="portfolio_link">
+
+ </div>
+ 
+  <div>
+   Portfolio Description: <input type="text" name="portfolio_description">
+
+ </div>
+
+ <div>
+   Portfolio File: <input type="file" name="portfolio_file">
+
+ </div>
+  
+
+
+
   <input type="submit" value="Submit", class="button">
 <% end %>
 

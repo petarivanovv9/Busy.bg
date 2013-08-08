@@ -1,22 +1,20 @@
 <a href = "/ads/new">  Направи обява </a>
 
-<form>
-<select  id='select-city', name="city_id">
-      <option value= "" > </option>
-      <% @cities.each do |city| %>
-            <option value= "<%=city.id%>" > <%= city.name %> </option>
-      <% end %>
-   </select>
-   <select  id='select-activity', name="activity_id">
-       <option value= "" > </option>
-      <% @activities.each do |activity| %>
-          <option value= "<%=activity.id%>" > <%= activity.name %> </option>
-    <% end %>
-</select>
+<%= form_tag '/its', :method => :get do %>
+<div class="field">
+    <%= label_tag :city_id %><br />
+    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name" )%>
+  </div>
+   <div class="field">
+    <%= label_tag :ad_activities %><br />
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name"),  {:multiple => true} %>
+  </div>
+  </div>
 
-
-    <input type="submit" value="Find", class="button">
-</form>
+  <div class="actions">
+    <%= submit_tag("Search") %>
+  </div>
+<% end %>
 
 <br />
 
@@ -24,3 +22,6 @@
 	<%= it.name %>
 	<br />
 <% end %>
+
+
+

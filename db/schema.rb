@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717084049) do
+ActiveRecord::Schema.define(:version => 20130808074238) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(:version => 20130717084049) do
 
   create_table "ad_activities", :force => true do |t|
     t.integer  "ad_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "actitvity_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "activity_id"
   end
 
   create_table "admin_users", :force => true do |t|
@@ -112,6 +112,10 @@ ActiveRecord::Schema.define(:version => 20130717084049) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "price"
+    t.string   "phone"
+    t.string   "portfolio_link"
+    t.text     "portfolio_description"
+    t.string   "portfolio_file"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

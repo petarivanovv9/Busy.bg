@@ -11,11 +11,14 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_presence_of :email
   validates_uniqueness_of :email
-
-  attr_accessible :city_id, :email, :name, :role_id
   
+  attr_accessible :city_id, :email, :name, :role_id, :phone, :portfolio_link, :portfolio_description, :portfolio_file
+  
+  mount_uploader :portfolio_file, PortfolioUploader
+
   belongs_to :role
   belongs_to :city
   has_many :user_activities
   has_many :ads
+
 end

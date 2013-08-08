@@ -28,8 +28,9 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'execjs'
 gem 'therubyracer', :platform => :ruby
 gem 'devise'
-
+gem 'carrierwave'
 gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
