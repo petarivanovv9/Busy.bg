@@ -11,8 +11,12 @@ class UsersController < ApplicationController
 	def save
 		current_user.city_id = params[:city_id]
 		current_user.role_id = params[:role_id]
-		current_user.save
-
+    current_user.phone = params[:phone]
+    current_user.portfolio_link = params[:portfolio_link]
+    current_user.portfolio_description = params[:portfolio_description]
+    current_user.portfolio_file = params[:portfolio_file]
+    current_user.save
+    
     activity = params[:activity_id]
 
     useractivity = UserActivity.new

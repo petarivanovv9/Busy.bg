@@ -10,7 +10,7 @@ TheBusyNet::Application.routes.draw do
   devise_for :users
   match "users/properties", to: 'users#properties',  as: 'currnet_user_properties', via: :get
 
-  match 'users/save_properties' => 'users#save'
+  match 'users/profile' => 'users#save'
   devise_for :users do 
     get '/users/sign_out' => 'devise/sessions#destroy' 
   end

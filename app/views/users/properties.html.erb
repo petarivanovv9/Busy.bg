@@ -1,5 +1,5 @@
 
-<%= form_tag action="/users/save_properties" do %>
+<%= form_tag action="/users/profile", :multipart => true  do %>
     <select  id='select-city', name="city_id">
       <option value= "" > </option>
       <% @cities.each do |city| %>
@@ -16,6 +16,29 @@
     <!-- <input id="select-activity" type="checkbox" name="activity_id" value="mlb", >  -->
   <div id='select-activity'>  
   </div>
+  <div>
+   Phone: <input type="text" name="phone">
+
+ </div>
+
+  <div>
+   Portfolio Link: <input type="text" name="portfolio_link">
+
+ </div>
+ 
+  <div>
+   Portfolio Description: <input type="text" name="portfolio_description">
+
+ </div>
+
+ <div>
+   Portfolio File: <input type="file" name="portfolio_file">
+
+ </div>
+  
+
+
+
   <input type="submit" value="Submit", class="button">
 <% end %>
 
