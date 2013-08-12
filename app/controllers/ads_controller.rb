@@ -6,6 +6,7 @@ class AdsController < InheritedResources::Base
     
     @ads = @ads.where(city_id: params[:city_id]) if params[:city_id].present?
     @ads = @ads.joins(:ad_activities).where('ad_activities.activity_id = ?', params[:activity_id]) if params[:activity_id].present?
+    @ads = @ads.where(max_price: params[:max_price]) if params[:max_price].present?
   end
  
   def create

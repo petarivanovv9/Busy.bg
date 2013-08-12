@@ -17,11 +17,8 @@
 <% end %>
 
 <br />
-
 <% @its.each do |it| %>
-	<%= it.name %>
-	<br />
+  <li>
+	 <a href = "/users/<%= it.id %>" > <%= it.name %></a>
+	</li>
 <% end %>
-
-
-
