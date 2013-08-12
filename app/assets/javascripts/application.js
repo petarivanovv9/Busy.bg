@@ -15,8 +15,8 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('#select-role').on('change', function(){
-    var role = $('#select-role').val();
+  $('#user_role_id').on('change', function(){
+    var role = $('#user_role_id').val();
     if (role != "") {
       $.ajax({
         type: "POST",

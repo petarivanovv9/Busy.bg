@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
  	def properties
   		@cities = City.all
-  		@roles= Role.all
+  		@roles = Role.all
+      @it = current_user
 	end
 
 	def save
@@ -18,18 +19,16 @@ class UsersController < ApplicationController
     current_user.save
     
     activity = params[:activity_id]
-
-    useractivity = UserActivity.new
-    useractivity.user_id = current_user.id
-  
-    activity.each do |i|
-      useractivity = UserActivity.new
-      useractivity.user_id = current_user.id
-      useractivity.activity_id = i
-      useractivity.save
+    if activity.present?
+      activity.each do |i|
+          useractivity = UserActivity.new
+          useractivity.user_id = current_user.id
+          useractivity.activity_id = i
+          useractivity.save
+      end
     end
-
-		render nothing: true
+    
+		redirect_to user_profile_path(user_id: current_user.id)
 	end 
 
   def show

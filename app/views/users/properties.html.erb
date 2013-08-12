@@ -1,39 +1,38 @@
+<%= form_for(@it, :url => "/users/profile", :multipart => true)   do |f| %>
+    <div class="field">
+    <%= f.label :city_id %><br />
+    <%= f.collection_select :city_id, City.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :role_id %><br />
+    <%= f.collection_select :role_id, Role.all, :id, :name %>
+  </div>  
 
-<%= form_tag action="/users/profile", :multipart => true  do %>
-    <select  id='select-city', name="city_id">
-      <option value= "" > </option>
-      <% @cities.each do |city| %>
-           <option value= "<%=city.id%>" > <%= city.name %> </option>
-      <% end %>
-  </select>
-  <select  id='select-role', name="role_id">
-      <option value= "" > </option>
-      <% @roles.each do |role| %>
-           <option value= "<%=role.id%>" > <%= role.name %> </option>
-      <% end %>
-  </select>
-
-    <!-- <input id="select-activity" type="checkbox" name="activity_id" value="mlb", >  -->
-  <div id='select-activity'>  
+  <div id='select-activity'>
   </div>
 
   <div>
-   Phone: <input type="text" name="phone">
+   <%= f.label :phone %><br />
+   <%= f.text_field :phone %>
   </div>
 
   <div>
-   Portfolio Link: <input type="text" name="portfolio_link">
+    <%= f.label :portfolio_link %><br />
+    <%= f.text_field :portfolio_link %>
   </div>
  
   <div>
-     Portfolio Description: <textarea rows="2" cols="30", name="portfolio_description">
-    </textarea> 
+    <%= f.label :portfolio_description %><br />
+    <%= f.text_area(:portfolio_description, :size => '30x2') %>
   </div>
 
  <div>
-   Portfolio File: <input type="file" name="portfolio_file">
+  <%= f.label :portfolio_file %><br />
+  <%= f.file_field :portfolio_file %>
  </div>
   
-  <input type="submit" value="Submit", class="button">
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>
 

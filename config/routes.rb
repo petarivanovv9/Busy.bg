@@ -17,7 +17,7 @@ TheBusyNet::Application.routes.draw do
 
   root to: 'users#index'
   match "get_activities/:role_id", to: 'role_activities#get_activities', via: [:post, :get]
-  match '/users/:user_id' => 'users#show'
+  match '/users/:user_id' => 'users#show', as: 'user_profile'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
