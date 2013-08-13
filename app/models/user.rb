@@ -20,5 +20,6 @@ class User < ActiveRecord::Base
   belongs_to :city
   has_many :user_activities
   has_many :ads
+  has_many :ad_applications
 
 end

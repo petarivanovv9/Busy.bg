@@ -4,4 +4,5 @@ class Ad < ActiveRecord::Base
   belongs_to :city
   belongs_to :user
   has_many :ad_activities
+  has_many :ad_applications
 end

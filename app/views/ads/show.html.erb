@@ -25,6 +25,11 @@
   <%= @ad.period %>
 </p>
 
+<%= form_tag '/ads/apply', :method => :post do %>
+  <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
+  <%= submit_tag("Apply") %>
+<% end %>
+
 <% if current_user.id == @ad.user_id %>
   <%= link_to 'Edit', edit_ad_path(@ad) %> |
 <% end %>

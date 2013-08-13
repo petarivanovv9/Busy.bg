@@ -30,6 +30,7 @@ gem 'therubyracer', :platform => :ruby
 gem 'devise'
 gem 'carrierwave'
 gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'mailboxer'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

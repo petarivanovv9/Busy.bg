@@ -49,5 +49,12 @@ class AdsController < InheritedResources::Base
 
     redirect_to ads_path
   end
+
+  def apply
+   ad_applications = AdApplication.new
+   ad_applications.user_id = current_user.id
+   ad_applications.ad_id = params[:ad_id]
+   ad_applications.save
+  end
 end
  
