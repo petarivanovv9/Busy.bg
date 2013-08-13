@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
  	protect_from_forgery
 
- 	# before_filter :authenticate_user!
+ 	 #before_filter :authenticate_user!
 
  	def properties
   		@cities = City.all
@@ -10,12 +10,13 @@ class UsersController < ApplicationController
 	end
 
 	def save
-		current_user.city_id = params[:city_id]
-		current_user.role_id = params[:role_id]
-    current_user.phone = params[:phone]
-    current_user.portfolio_link = params[:portfolio_link]
-    current_user.portfolio_description = params[:portfolio_description]
-    current_user.portfolio_file = params[:portfolio_file]
+		current_user.city_id = params[:user] [:city_id]
+		current_user.role_id = params[:user][:role_id]
+    current_user.phone = params[:user][:phone]
+    current_user.portfolio_link = params[:user][:portfolio_link]
+    current_user.portfolio_description = params[:user][:portfolio_description]
+    current_user.portfolio_file = params[:user][:portfolio_file]
+    current_user.price = params[:user][:price]
     current_user.save
     
     activity = params[:activity_id]
@@ -35,4 +36,3 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 end
-

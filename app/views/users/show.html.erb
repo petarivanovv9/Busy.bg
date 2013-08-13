@@ -10,7 +10,10 @@
     <dd><%= @user.portfolio_link%></dd>
      <dt>phone:</dt>
     <dd><%= @user.phone%></dd>
+    <dt>price:</dt>
+    <dd><%= @user.price%></dd>
   </dl>
 </div>
-
-<%=link_to 'Edit', '/users/properties' %> 
+<% if current_user.id == @user.id %>
+  <%=link_to 'Edit', '/users/properties' %>
+<% end %> 

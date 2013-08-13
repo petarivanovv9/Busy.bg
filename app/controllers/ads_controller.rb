@@ -31,4 +31,23 @@ class AdsController < InheritedResources::Base
 
     redirect_to ads_path
   end
+
+  def edit
+    @ad = Ad.find(params[:id])
+
+    if current_user.id != @ad.user_id 
+     redirect_to ads_path
+    end 
+  end
+
+  def destroy
+    @ad = Ad.find(params[:id])
+
+    if current_user.id == @ad.user_id 
+      @ad.destroy
+    end
+
+    redirect_to ads_path
+  end
 end
+ 
