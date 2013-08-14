@@ -39,5 +39,15 @@ $(document).ready(function(){
 
     }
   });
+
+  var timelyrefreshnotifications = function(){
+    url = '/check_for_notifications'
+      $.get(url,function(data,status){
+        $('#notifications').html(data);
+          return false;
+      });
+  };
+  
+  setInterval(timelyrefreshnotifications, 2000);
 });
 

@@ -24,10 +24,11 @@
   <b>Period:</b>
   <%= @ad.period %>
 </p>
-
-<%= form_tag '/ads/apply', :method => :post do %>
+<% if current_user.id != @ad.user_id %>
+  <%= form_tag '/ads/apply', :method => :post do %>
   <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
   <%= submit_tag("Apply") %>
+<% end %>
 <% end %>
 
 <% if current_user.id == @ad.user_id %>
