@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+		.menu { text-align:center; }
+		.menu ul li {display:inline;}
+	</style>
+
   <title> Busy net </title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -18,29 +23,35 @@
 <body>
 	<!-- <p class="notice"><%= notice %></p> -->
 	<!-- <p class="alert"><%= alert %></p> -->
-<div id="wrap">
-	<div class="wrapmax">
-		<a href="#" id="range-logo"></a>
-			<div class="wrapc">
+	<div id="wrap">
+		<div class="wrapmax">
+			<a href="#" id="range-logo"></a>
+				<div class="wrapc">
+				</div>
+		</div>
+		<div>
+			<%  if current_user.present? %>
+				<%= current_user.email %>
+				<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+			<% else %> 
+			  <%= link_to "Sign In", '/users/sign_in' %>
+			<% end %>
+			<div class="menu">
+				<ul>
+						<li id="menu"><%=link_to "ITS", its_path, :class => "menunav"%></li>
+						<li id="menu"><%=link_to "ADS", ads_path, :class => "menunav"%></li>
+						<li id="menu"><%=link_to "Update Profile", "/users/properties", :class => "menunav"%></li>
+				</ul>
 			</div>
+		</div>
 	</div>
-	<div>
-		<%  if current_user.present? %>
-			<%= current_user.email %>
-			<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-		<% else %> 
-		  <%= link_to "Sign In", '/users/sign_in' %>
-		<% end %>
-
-	</div>
-</div>
-
-<div id="notifications", style = "float:right;">
-	sdfsdf
-</div>	
+		
+	<div id="notifications", style = "float:right;">
+		sdfsdf
+	</div>	
 
 
-<%= yield %>
+	<%= yield %>
 
 
 </body>
