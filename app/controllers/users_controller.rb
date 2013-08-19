@@ -35,4 +35,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:user_id])
   end
+
+  def send_message
+    c = params[:current_user]
+    t = params[:cvokea s koito govorq]
+    b = params[:body]
+    c.send_message(t,b)
+  end
 end

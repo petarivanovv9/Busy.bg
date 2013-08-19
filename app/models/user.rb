@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
   
   mount_uploader :portfolio_file, PortfolioUploader
 
+  acts_as_messageable :required   => :body,                  #[:topic, :body]
+                      :dependent  => :destroy,               # default :nullify
+                      :group_messages => true             
+
   belongs_to :role
   belongs_to :city
   has_many :user_activities

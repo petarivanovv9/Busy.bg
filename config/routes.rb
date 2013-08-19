@@ -16,8 +16,8 @@ TheBusyNet::Application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy' 
   end
 
-  match '/check_for_notifications' => "notifications#refresh"
-
+  match '/check_for_notifications' => 'notifications#refresh'
+  match '/send message' => 'users#send_message'
   root to: 'users#index'
   match "get_activities/:role_id", to: 'role_activities#get_activities', via: [:post, :get]
   match '/users/:user_id' => 'users#show', as: 'user_profile'
