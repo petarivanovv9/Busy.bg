@@ -37,9 +37,8 @@ class UsersController < ApplicationController
   end
 
   def send_message
-    c = params[:current_user]
-    t = params[:cvokea s koito govorq]
-    b = params[:body]
-    c.send_message(t,b)
+    current_user.send_message(User.find(params[:user_id]), { :body =>params[:body], :topic => "topic" } )
+  
+    redirect_to user_profile_path(User.find(params[:user_id]))   
   end
 end

@@ -8,7 +8,7 @@
     <dd><%= @user.portfolio_description%></dd>
     <dt>portfolio link:</dt>
     <dd><%= @user.portfolio_link%></dd>
-     <dt>phone:</dt>
+    <dt>phone:</dt>
     <dd><%= @user.phone%></dd>
     <dt>price:</dt>
     <dd><%= @user.price%></dd>
@@ -16,17 +16,24 @@
 </div>
 <% if current_user.id == @user.id %>
   <%=link_to 'Edit', '/users/properties' %>
+  <ul>
+  <% @user.received_messages.each do |received_message| %>
+    <li>
+      <%= received_message.sent_messageable.name %> 
+      <%= received_message.topic %>
+      <%= received_message.body %>
+    </li>
+<% end %>
+</ul>
 <% else %>
- <form action = '/send message'> 
-  <input type="hidden" name="currnet_user" value="marin">
-  <input type="hidden" name="currnet_user" value="choveka s koito govorq">
+  <form action = '/send_message'> 
+    <input type="hidden" name="user_id" value="<%= @user.id %>">
 
-  
-  <div>
-     <textarea rows="3" cols="30" name ="body"></textarea>
-  </div>
-<div class="actions">
-    <input type="button" value="Message">
-  </div>
-</form>
+    <div>
+       <textarea rows="3" cols="30" name ="body"></textarea>
+    </div>
+    <div class="actions">
+      <input type="submit" value="Message">
+    </div>
+  </form>
 <% end %> 
