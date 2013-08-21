@@ -40,7 +40,7 @@
 				<ul>
 						<li id="menu"><%=link_to "ITS", its_path, :class => "menunav"%></li>
 						<li id="menu"><%=link_to "ADS", ads_path, :class => "menunav"%></li>
-						<li id="menu"><%=link_to "Update Profile", "/users/properties", :class => "menunav"%></li>
+						<li id="menu"><%=link_to "My Profile", user_profile_path(user_id: current_user.id), :class => "menunav"%></li>
 				</ul>
 			</div>
 		</div>

@@ -1,24 +1,25 @@
 <a href = "/ads/new">  Направи обява </a>
 
 <%= form_tag '/its', :method => :get do %>
-<div class="field">
+  <div class="field">
     <%= label_tag :city_id %><br />
     <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name" )%>
   </div>
-   <div class="field">
+  <div class="field">
     <%= label_tag :ad_activities %><br />
     <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name"),  {:multiple => true} %>
   </div>
+  <div>
+    <%= label_tag :price %><br />
+    <%= text_field_tag(:price) %>
   </div>
-
   <div class="actions">
-    <%= submit_tag("Search") %>
+      <%= submit_tag("Search") %>
   </div>
 <% end %>
-
-<br />
-<% @its.each do |it| %>
-  <li>
-	 <a href = "/users/<%= it.id %>" > <%= it.name %></a>
-	</li>
-<% end %>
+  <br />
+  <% @its.each do |it| %>
+    <li>
+  	 <a href = "/users/<%= it.id %>" > <%= it.name %></a>
+  	</li>
+  <% end %>

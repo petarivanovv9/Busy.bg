@@ -1,5 +1,5 @@
 <%= form_for(@it, :url => "/users/profile", :multipart => true)   do |f| %>
-    <div class="field">
+  <div class="field">
     <%= f.label :city_id %><br />
     <%= f.collection_select :city_id, City.all, :id, :name %>
   </div>
@@ -12,9 +12,9 @@
   </div>
 
   <div>
-  <%= f.label :price %><br />
-  <%= f.text_field :price %>
- </div>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
 
   <div>
    <%= f.label :phone %><br />

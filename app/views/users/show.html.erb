@@ -17,16 +17,31 @@
 <% if current_user.id == @user.id %>
   <%=link_to 'Edit', '/users/properties' %>
   <ul>
-  <% @user.received_messages.each do |received_message| %>
-    <li>
-      <%= received_message.sent_messageable.name %> 
-      <%= received_message.topic %>
-      <%= received_message.body %>
-    </li>
-<% end %>
-</ul>
+    <% @user.received_messages.each do |received_message| %>
+      <li>
+        <%= received_message.sent_messageable.name %> 
+        <%= received_message.topic %>
+        <%= received_message.body %>
+        <a class="reply_link" href="javascript:void(0)" data-message="<%= received_message.id %>">Reply</a>
+      </li>
+
+    <% end %>
+  </ul>
+  <!-- <form action = '/reply_message' style="display: none" id="reply_form">  -->
+  
+  
+  <%= form_tag '/reply_message', :method => :post, remote: true, :class => "message_form", style:"display: none", id:"reply_form" do %>
+    <input id="reply_message_id" type="hidden" name="message_id" value="">
+
+    <div>
+       <textarea rows="3" cols="30" name ="body"></textarea>
+    </div>
+    <div class="actions">
+      <input type="submit" value="Message">
+    </div>
+  <% end %>
 <% else %>
-  <form action = '/send_message'> 
+  <%= form_tag '/send_message', :method => :post, remote: true, :class => "message_form", id:"send_message_form" do %>
     <input type="hidden" name="user_id" value="<%= @user.id %>">
 
     <div>
@@ -35,5 +50,5 @@
     <div class="actions">
       <input type="submit" value="Message">
     </div>
-  </form>
+  <% end %>
 <% end %> 

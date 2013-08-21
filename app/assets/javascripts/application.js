@@ -48,6 +48,15 @@ $(document).ready(function(){
       });
   };
   
-  setInterval(timelyrefreshnotifications, 2000);
+  // setInterval(timelyrefreshnotifications, 6000);
+
+  $(".reply_link").click(function () {
+    $("#reply_form").show("slow");
+    $("#reply_message_id").val($(this).data("message"));
+  });  
+
+  $('.message_form').submit(function(e) {
+    $(this).hide("slow");
+  }); 
 });
 
