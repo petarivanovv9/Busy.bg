@@ -4,55 +4,113 @@
 	<style>
 		.menu { text-align:center; }
 		.menu ul li {display:inline;}
-	</style>
+	</style> 
 
-  <title> Busy net </title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0">
- --><meta charset="utf-8">
-<%= stylesheet_link_tag    "demo" %>
-<%= stylesheet_link_tag    "style" %>
-<!--[if !IE 7]>
-	<style type="text/css">
-		#wrap {display:table;height:100%}
-	</style>
-<![endif]-->
+	<title> Busy net </title>
+
+	 
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+ 	<meta charset="utf-8">
+    <%= stylesheet_link_tag    "demo" %>
+    <%= stylesheet_link_tag    "style" %>
+    <!--[if !IE 7]>
+		<style type="text/css">
+			#wrap {display:table;height:100%}
+		</style>
+	<![endif]-->
 </head>
 <body>
 	<!-- <p class="notice"><%= notice %></p> -->
 	<!-- <p class="alert"><%= alert %></p> -->
-	<div id="wrap">
-		<div class="wrapmax">
-			<a href="#" id="range-logo"></a>
-				<div class="wrapc">
+<div class="big">
+	<div class="wrapmax">
+		<div class="section group">
+			<div class="col span_1_of_5"> </div>
+			<div class="col span_1_of_5"> </div>
+			<div class="col span_1_of_5">
+				<div class="logo">
+					<a href="index.html" id="range-logo"> Вход </a> 
 				</div>
-		</div>
-		<div>
-			<%  if current_user.present? %>
-				<%= current_user.email %>
-				<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-			<% else %> 
-			  <%= link_to "Sign In", '/users/sign_in' %>
-			<% end %>
-			<div class="menu">
-				<ul>
-						<li id="menu"><%=link_to "ITS", its_path, :class => "menunav"%></li>
-						<li id="menu"><%=link_to "ADS", ads_path, :class => "menunav"%></li>
-						<li id="menu"><%=link_to "My Profile", user_profile_path(user_id: current_user.id), :class => "menunav"%></li>
-				</ul>
+			</div>
+
+			<div class="col span_1_of_5"> </div>
+
+			<div class="col span_1_of_5"> </div>
+			<br />
+			<br />
+			<br />
+			<div style= "float:right;">
+				<%  if current_user.present? %>
+					<%= current_user.email %>
+					<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+				<% else %> 
+			  		<%= link_to "Sign In", '/users/sign_in' %>
+				<% end %>
 			</div>
 		</div>
+
 	</div>
-		
-	<div id="notifications", style = "float:right;">
+</div>
+
+<div class="wrap">
+		<nav class="nav right">
+			<ul>
+	 	 		<li class="current"><a href="index.html">Начало</a></li>
+				<li id="menu"><%=link_to "Направи обява", ads_path %></li>
+				<li><%=link_to "ИТ специалисти", its_path %></li>
+				<li><%=link_to "Учители", teachers_path %></li>
+				<li><%=link_to "Счетоводители", accountants_path %></li>
+			</ul>
+		</nav>
+</div>
+
+
+
+<br />
+<br />
+<br />
+
+			<div class="menu">
+				<ul>
+					<li id="menu"><%=link_to "My Profile", user_profile_path(user_id: current_user.id), :class => "menunav"%></li>
+					
+				</ul>
+			</div>
+
+
+<div id="notifications", style = "float:right;">
 		sdfsdf
-	</div>	
+</div>	
+
 
 
 	<%= yield %>
 
+
+
+<div id="footer">
+	<div class="umri">
+		<ul class="umretegoveda">
+	 		<li><a href="index.html">Начало</a></li>
+			<li><a href="signin.html">Профил</a></li>
+			<li><a href="register.html">Съобщения</a></li>
+			<li><a href="register.html">Направи обява</a></li>
+		</ul>	
+	</div>
+	<p> Последвайте ни в социалните мрежи: <br/>	
+		<%= link_to image_tag("facebook.png"), "http://www.facebook.com" %>
+		<%= link_to image_tag("google.png"), "http://www.plus.google.com" %>
+		<%= link_to image_tag("twitter.png"), "http://www.twitter.com" %>
+	</p>
+	<p> All copyrights reserved. <a href="developers.html"> Busy </a> 2013 </p>
+</div>
 
 </body>
 </html>

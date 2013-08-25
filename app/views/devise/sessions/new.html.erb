@@ -1,9 +1,12 @@
+<head>
+<%= stylesheet_link_tag  "application" %> 
+</head>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   
   <h2> Sign in </h2>
 
-  <%= f.email_field :email, :autofocus => true, :class=>"text-field", :placeholder=>"E-mail" %></div>
+  <%= f.email_field :email, :autofocus => true, :class => "text-field", :placeholder => "E-mail" %></div>
 
   <%= f.password_field :password, :class => "text-field", :placeholder => "Password" %> </div>
 

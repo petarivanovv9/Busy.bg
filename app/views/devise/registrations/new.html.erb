@@ -1,7 +1,12 @@
+<head>
+<%= stylesheet_link_tag  "application" %> 
+</head> 
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class=>"register"  }) do |f| %>
   <%= devise_error_messages! %>
   
   <h2> Sign up </h2>
+
 
   <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Name" %></div>
 
@@ -12,8 +17,43 @@
   <%= f.password_field :password_confirmation, :class=>"text-field", :placeholder=>"Repeat Password" %></div>
 
   <div> <input type="submit" value="Sign up", class="button"></div>
+ 
+  <%= render "devise/shared/links" %>
+<% end %>
+<!--
+<br />
+<br />
+<div class="section group">
+    <div class="col span_1_of_4"> </div>
+    <div class="col span_2_of_4">
+      <section id="content">
+        <h1> Регистрация </h1>
+
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class=>"register"  }) do |f| %>
+  <%= devise_error_messages! %>
+  
+<div>
+  <%= f.text_field :name, :autofocus => true, :class=>"text-field1", :placeholder=>"Name" %></div>
+</div>
+<div>
+  <%= f.email_field :email, :autofocus => true, :class=>"text-field", :placeholder=>"E-mail" %></div>
+</div>
+<div>
+  <%= f.password_field :password, :class=>"text-field2", :placeholder=>"Password" %></div>
+</div>
+<div>
+  <%= f.password_field :password_confirmation, :class=>"text-field2", :placeholder=>"Repeat Password" %></div>
+</div>
+  <div> <input type="submit" value="Sign up", class="button"></div>
   <br />
   <br />
 
   <%= render "devise/shared/links" %>
 <% end %>
+    </section>
+    </div>
+    <div class="col span_1_of_4"></div>
+  </div>
+
+-->
+  

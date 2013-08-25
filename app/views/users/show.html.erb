@@ -1,20 +1,31 @@
-<div id="profile">
-  <dl>
-    <dt>name:</dt>
-    <dd><%= @user.name %></dd>
-    <dt>user.portfolio file:</dt>
-    <dd><%= @user.portfolio_file%></dd>
-    <dt>portfolio description:</dt>
-    <dd><%= @user.portfolio_description%></dd>
-    <dt>portfolio link:</dt>
-    <dd><%= @user.portfolio_link%></dd>
-    <dt>phone:</dt>
-    <dd><%= @user.phone%></dd>
-    <dt>price:</dt>
-    <dd><%= @user.price%></dd>
-  </dl>
-</div>
-<% if current_user.id == @user.id %>
+    <div class="wrapb">
+        <div class="section group">
+    <div class="col span_1_of_4">
+      <section class="contenta" id="a">
+      <div>
+      <p>Your AD here !</p>
+      </div>
+    
+    </section>
+    </div>
+<div class="col span_2_of_4">
+      <section class="contenta">
+    <img src="images/pic.jpg" class="round">  
+    <p class="pro">
+    <ul class="lili">
+    <li>Име: <%= @user.name %> </li>
+    
+    <li>Дейности:  </li>
+    <li>Сфера:  <%= @user.role %></li>
+    <li>Град: <%= @user.city %></li>
+    <li>Телефон: <%= @user.phone %></li>
+    <li>Портфолио: <%= @user.portfolio_link %> </li>
+    <li>Описание: <%= @user.portfolio_description %> </li>
+    <li>Цена за час: <%= @user.price %></li>
+    </ul>
+    </p>
+    <div>
+    <% if current_user.id == @user.id %>
   <%=link_to 'Edit', '/users/properties' %>
   <ul>
     <% @user.received_messages.each do |received_message| %>
@@ -24,9 +35,26 @@
         <%= received_message.body %>
         <a class="reply_link" href="javascript:void(0)" data-message="<%= received_message.id %>">Reply</a>
       </li>
-
     <% end %>
   </ul>
+</div>
+  </section><!-- content -->
+    </div>
+    <div class="col span_1_of_4">
+      <section class="contenta" id="c">
+      <div>
+    <p>Your AD here !</p>
+      </div>
+    
+    </section>
+    </div>
+</div>
+</div>
+
+
+
+
+
   <!-- <form action = '/reply_message' style="display: none" id="reply_form">  -->
   
   

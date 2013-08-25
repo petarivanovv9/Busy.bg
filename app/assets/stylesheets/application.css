@@ -1,4 +1,4 @@
-body {
+ body {
 	font-family: Helvetica;
 }
 
@@ -18,11 +18,11 @@ form {
 	padding-top: 1px;
 }
 
-form.register{																				/* Register form height */
+form .register{																				
 	height: 450px;
 }
 
-form .text-field {																			/* Input fields; Username, Password etc. */
+form .text-field {																			
 	border: 1px solid #a6a6a6;
 	width: 230px;
 	height: 40px;
@@ -40,7 +40,7 @@ form .text-field:focus {
 	background: white;
 }
 
-form .button {																				/* Submit button */
+form .button {																				
 	border-radius: 3px;
 	border: 1px solid #336895;
 	box-shadow: inset 0 1px 0 #8dc2f0;
