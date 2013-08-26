@@ -3,9 +3,9 @@ TheBusyNet::Application.routes.draw do
   
   root to: 'menu#index'
 
-  match "/teachers", to: 'teachers#index'
-  match "/its", to: 'its#index'
-  match "/accountants", to: 'accountants#index'
+  match "/teachers", to: 'its#index', :role => 'Teacher'
+  match "/its", to: 'its#index', :role =>  'IT'
+  match "/accountants", to: 'its#index', :role =>  'Accountant'
 
   devise_for :users
   match "users/properties", to: 'users#properties',  as: 'currnet_user_properties', via: :get

@@ -1,6 +1,6 @@
 class ItsController < ApplicationController
   def index
-    @its = User.where(role_id: Role.find_by_name('IT').id)
+    @its = User.where(role_id: Role.find_by_name(params[:role]).id)
     @cities = City.all
     @activities = Activity.all
    

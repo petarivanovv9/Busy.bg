@@ -1,23 +1,22 @@
 <h1>Listing ads</h1>
-<form>
-<select  id='select-city', name="city_id">
-      <option value= "" > </option>
-      <% @cities.each do |city| %>
-            <option value= "<%=city.id%>" > <%= city.name %> </option>
-      <% end %>
-   </select>
-   <select  id='select-activity', name="activity_id">
-       <option value= "" > </option>
-      <% @activities.each do |activity| %>
-          <option value= "<%=activity.id%>" > <%= activity.name %> </option>
-    <% end %>
-</select>
+<%= form_tag :method => :get do %>
+  <div class="field">
+    <%= label_tag :city_id %><br />
+    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
+  </div>
+  <div class="field">
+    <%= label_tag :ad_activities %><br />
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
+  </div>
   <div>
-   Price: <input type="text" name="max_price">
+    <%= label_tag :max_price %><br />
+    <%= text_field_tag(:max_price) %>
   </div>
 
-    <input type="submit" value="Find", class="button">
-</form>
+  <div class="actions">
+    <%= submit_tag("Search") %>
+  </div>
+<% end %>
  
 
 <table>

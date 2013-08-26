@@ -1,13 +1,13 @@
 <a href = "/ads/new">  Направи обява </a>
 
-<%= form_tag '/its', :method => :get do %>
+<%= form_tag :method => :get do %>
   <div class="field">
     <%= label_tag :city_id %><br />
-    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name" )%>
+    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
   </div>
   <div class="field">
     <%= label_tag :ad_activities %><br />
-    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name"),  {:multiple => true} %>
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
   </div>
   <div>
     <%= label_tag :price %><br />
