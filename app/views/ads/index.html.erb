@@ -1,4 +1,8 @@
-<h1>Listing ads</h1>
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
+<h2>Обяви</h2>
 <%= form_tag('/ads', :method => :get) do %>
   <div class="field">
     <%= label_tag :city_id %><br />
@@ -14,7 +18,7 @@
   </div>
 
   <div class="actions">
-    <%= submit_tag("Search") %>
+    <input type="submit" value="Търси", class="exit">
   </div>
 <% end %>
  
@@ -50,3 +54,8 @@
 <br />
 
 <%= link_to 'New Ad', new_ad_path %>
+
+</section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>

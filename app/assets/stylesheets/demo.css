@@ -1,6 +1,6 @@
 .round{
 margin:2%;
-    width:250px;
+	width:250px;
 border-radius: 200px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
@@ -8,12 +8,12 @@ border-radius: 200px;
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	position:relative;
-    display:inline-block;
+	display:inline-block;
 	float:left;
 }
 .umri{
  margin:0 auto;
- 	display: table;
+	display: table;
 }
 .umretegoveda  li{
   display: inline;
@@ -27,7 +27,7 @@ display:inline;
 
 .round2{
 margin:1%;
-    width:90px;
+	width:90px;
 border-radius: 200px;
    border: 3px solid rgba(0, 0, 0, 0.1);
 	-webkit-border-radius: 150px;
@@ -36,7 +36,7 @@ border-radius: 200px;
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .1);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .1);
 	position:relative;
-    display:inline-block;
+	display:inline-block;
 	float:left;
 }
 .pro{
@@ -87,13 +87,13 @@ padding-top:100px;
 	position: relative;
 }
 .tt-wrapper li .tt-gplus,.tt-wrapper li .tt-gplus:hover{
-    background-position: 0px 0px;
+	background-position: 0px 0px;
 }
 .tt-wrapper li .tt-twitter, .tt-wrapper li .tt-twitter:hover{
-    background-position: -200px 0px;
+	background-position: -200px 0px;
 }
 .tt-wrapper li .tt-dribbble, .tt-wrapper li .tt-dribbble:hover{
-    background-position: -400px 0px;
+	background-position: -400px 0px;
 }
 .tt-wrapper li a span{
 	width: 200px;
@@ -102,7 +102,7 @@ padding-top:100px;
 	padding: 10px;
 	left: 50%;
 	margin-left: -64px;
-    font-family:"Bebas Neue";
+	font-family:"Bebas Neue";
 	font-weight: 400;	
 	font-style: bold;
 	font-size: 14px;
@@ -158,7 +158,7 @@ padding-top:100px;
 	transform: translate(0px) rotate(0deg) scale(1);
 }
 .tt-wrapper2{
-	padding-top: 60px;
+	padding-top: 30px;
 	width: 93px;
 	height: 69px;
 	margin: 0 auto;
@@ -190,13 +190,13 @@ padding-top:100px;
 	position: relative;
 }
 .tt-wrapper2 li .tt-gplus,.tt-wrapper2 li .tt-gplus:hover{
-    background-position: 0px 0px;
+	background-position: 0px 0px;
 }
 .tt-wrapper2 li .tt-twitter, .tt-wrapper2 li .tt-twitter:hover{
-    background-position: -189px 0px;
+	background-position: -189px 0px;
 }
 .tt-wrapper2 li .tt-dribbble, .tt-wrapper2 li .tt-dribbble:hover{
-    background-position: -96px 0px;
+	background-position: -96px 0px;
 }
 .tt-wrapper2 li a span{
 	width: 130px;
@@ -205,7 +205,7 @@ padding-top:100px;
 	padding: 10px;
 	left: 50%;
 	margin-left: -64px;
-    font-family:"Bebas Neue";
+	font-family:"Bebas Neue";
 	font-weight: 400;	
 	font-style: bold;
 	font-size: 14px;
@@ -278,7 +278,7 @@ left:20%;
 	padding: 10px;
 	left: 100px;
 	margin-right: -10px;
-    font-family:"Bebas Neue";
+	font-family:"Bebas Neue";
 	font-weight: 400;	
 	font-style: bold;
 	font-size: 14px;
@@ -316,3 +316,4 @@ left:20%;
 	-ms-transform: translate(0px) rotate(0deg) scale(1);
 	transform: translate(0px) rotate(0deg) scale(1);
 }
+

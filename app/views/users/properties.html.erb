@@ -1,3 +1,8 @@
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
+
 <%= form_for(@it, :url => "/users/profile", :multipart => true)   do |f| %>
   <div class="field">
     <%= f.label :city_id %><br />
@@ -37,7 +42,11 @@
  </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <input type="submit" value="Обнови", class="exit">
   </div>
 <% end %>
 
+</section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>

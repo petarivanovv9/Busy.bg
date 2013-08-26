@@ -1,4 +1,4 @@
-<head>
+<!--<head>
 <%= stylesheet_link_tag  "application" %> 
 </head> 
 
@@ -8,19 +8,22 @@
   <h2> Sign up </h2>
 
 
-  <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Name" %></div>
+  <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Name" %>
 
-  <%= f.email_field :email, :autofocus => true, :class=>"text-field", :placeholder=>"E-mail" %></div>
+  <%= f.email_field :email, :autofocus => true, :class=>"text-field", :placeholder=>"E-mail" %>
 
   <%= f.password_field :password, :class=>"text-field", :placeholder=>"Password" %></div>
 
-  <%= f.password_field :password_confirmation, :class=>"text-field", :placeholder=>"Repeat Password" %></div>
+  <%= f.password_field :password_confirmation, :class=>"text-field", :placeholder=>"Repeat Password" %>
 
   <div> <input type="submit" value="Sign up", class="button"></div>
  
   <%= render "devise/shared/links" %>
 <% end %>
-<!--
+
+-->
+
+
 <br />
 <br />
 <div class="section group">
@@ -33,20 +36,18 @@
   <%= devise_error_messages! %>
   
 <div>
-  <%= f.text_field :name, :autofocus => true, :class=>"text-field1", :placeholder=>"Name" %></div>
+  <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Име" %>
 </div>
 <div>
-  <%= f.email_field :email, :autofocus => true, :class=>"text-field", :placeholder=>"E-mail" %></div>
+  <%= f.email_field :email, :autofocus => true, :class=>"text-field1", :placeholder=>"E-mail" %>
 </div>
 <div>
-  <%= f.password_field :password, :class=>"text-field2", :placeholder=>"Password" %></div>
+  <%= f.password_field :password, :class=>"text-field2", :placeholder=>"Парола" %>
 </div>
 <div>
-  <%= f.password_field :password_confirmation, :class=>"text-field2", :placeholder=>"Repeat Password" %></div>
+  <%= f.password_field :password_confirmation, :class=>"text-field2", :placeholder=>"Повтори парола" %>
 </div>
-  <div> <input type="submit" value="Sign up", class="button"></div>
-  <br />
-  <br />
+  <div> <input type="submit" value="Регистрирай се", class="button"></div>
 
   <%= render "devise/shared/links" %>
 <% end %>
@@ -55,5 +56,5 @@
     <div class="col span_1_of_4"></div>
   </div>
 
--->
+
   
