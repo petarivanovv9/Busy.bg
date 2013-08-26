@@ -1,5 +1,5 @@
 <h1>Listing ads</h1>
-<%= form_tag :method => :get do %>
+<%= form_tag('/ads', :method => :get) do %>
   <div class="field">
     <%= label_tag :city_id %><br />
     <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
