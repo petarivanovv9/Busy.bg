@@ -27,7 +27,7 @@
 <% if current_user.id != @ad.user_id %>
   <%= form_tag '/ads/apply', :method => :post do %>
   <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
-  <%= submit_tag("Apply") %>
+  <%= submit_tag("Кандидатствай") %>
 <% end %>
 <% end %>
 

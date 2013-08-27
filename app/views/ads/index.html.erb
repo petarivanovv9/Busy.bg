@@ -13,6 +13,10 @@
     <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
   </div>
   <div>
+    <%= label_tag :min_price %><br />
+    <%= text_field_tag(:min_price) %>
+  </div>
+  <div>
     <%= label_tag :max_price %><br />
     <%= text_field_tag(:max_price) %>
   </div>
@@ -25,11 +29,11 @@
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Max price</th>
-    <th>City</th>
-    <th>Deadline</th>
-    <th>Period v dni</th>
+    <th>Потребител</th>
+    <th>Максимална цена</th>
+    <th>Град</th>
+    <th>Крайна дата</th>
+    <th>Период в дни</th>
     <th></th>
     <th></th>
     <th></th>
@@ -44,9 +48,9 @@
     <td><%= ad.city.try(:name) %></td>
     <td><%= ad.deadline %></td>
     <td><%= ad.period %></td>
-    <td><%= link_to 'Show', ad %></td>
-    <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-    <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Покажи', ad %></td>
+    <td><%= link_to 'Редактирай', edit_ad_path(ad) %></td>
+    <td><%= link_to 'Изтрий', ad, method: :delete, data: { confirm: 'Потвърдете' } %></td>
   </tr>
 <% end %>
 </table>

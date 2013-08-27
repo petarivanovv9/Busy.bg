@@ -15,8 +15,12 @@
     <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
   </div>
   <div>
-    <%= label_tag :price %><br />
-    <%= text_field_tag(:price) %>
+    <%= label_tag :min_price %><br />
+    <%= text_field_tag(:min_price) %>
+  </div>
+  <div>
+    <%= label_tag :max_price %><br />
+    <%= text_field_tag(:max_price) %>
   </div>
   <div class="actions">
     <input type="submit" value="Търси", class="exit">
