@@ -31,16 +31,16 @@
   <% @its.each do |it| %>
     <li>
       <div class="novina">
-      <img src="images/pic.jpg" class="round2">
-      <a href = "/users/<%= it.id %>", class="viewprofile" > 
-    <span>
-      <p>Цена за час: <%= it.price %> лв. </p>
-      <p>Качества: <%=  it = User.where(role_id: Role.find_by_name('IT').id)%> </p>
-    </span>
-    <%= it.name %></a>
+        <img src="images/pic.jpg" class="round2">
+        <a href = "/users/<%= it.id %>", class="viewprofile" > 
+          <span>
+            <p>Цена за час: <%= it.price %> лв. </p>
+            <p>Качества: <%= it.activities.map{|activity| activity.name}.join(', ') %> </p>
+          </span>
+          <%= it.name %>
+        </a>
       </div>
     </li>
-    
   <% end %>
 
   </ul>

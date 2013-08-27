@@ -36,7 +36,7 @@
 			<div class="col span_1_of_5"> </div>
 			<div class="col span_1_of_5">
 				<div class="logo">
-					<a href="index.html" id="range-logo"> Вход </a> 
+					<a href="<%= root_path %>" id="range-logo"> Вход </a> 
 				</div>
 			</div>
 
@@ -48,7 +48,7 @@
 			<br />
 			<div style= "float:right;">
 				<%  if current_user.present? %>
-					<%= current_user.email %>
+					<%= link_to current_user.name, user_profile_path(user_id: current_user.id) %>
 					<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
 				<% else %> 
 			  		<%= link_to "Sign In", '/users/sign_in' %>
@@ -63,8 +63,8 @@
 <div class="wrap">
 		<nav class="nav right">
 			<ul>
-	 	 		<li class="current"><a href="index.html">Начало</a></li>
-				<li id="menu"><%=link_to "Направи обява", ads_path %></li>
+	 	 		<li class="current"><a href="<%= root_path %>">Начало</a></li>
+				<li id="menu"><%=link_to "Направи обява", new_ad_path %></li>
 			</ul>
 		</nav>
 </div>

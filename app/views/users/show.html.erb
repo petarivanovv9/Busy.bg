@@ -14,10 +14,11 @@
     <p class="pro">
     <ul class="lili">
     <li>Име: <%= @user.name %> </li>  
-    <li>Дейности:  </li>
+    <li>Дейности: <%= @user.activities.map{|activity| activity.name}.join(', ') %> </li>
     <li>Сфера:  <%= @user.role.name %></li>
     <li>Град: <%= @user.city.name %></li>
     <li>Телефон: <%= @user.phone %></li>
+    <li>Портфолио:<img src="<%= @user.portfolio_file %>" ></li>
     <li>Портфолио: <%= @user.portfolio_link %> </li>
     <li>Описание: <%= @user.portfolio_description %> </li>
     <li>Цена за час: <%= @user.price %></li>
