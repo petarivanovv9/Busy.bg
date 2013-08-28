@@ -1,23 +1,27 @@
-<head>
-<%= stylesheet_link_tag  "application" %> 
-</head>
+<div class="section group">
+    <div class="col span_1_of_4"> </div>
+    <div class="col span_2_of_4">
+      <section id="content">
+        <h1> Вход </h1>
+<%= form_for("user", :url => user_session_path) do |f| %>
+<div>
+  <%= f.email_field :email, :autofocus => true, :class => "text-field", :placeholder => "Електронна поща" %>
+</div>
+<div>
+  <%= f.password_field :password, :class => "text-field2", :placeholder => "Парола" %>
+ </div>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  
-  <h2> Sign in </h2>
+  <div> <input type="submit" value="Вход", class="button"> 
+  <%= link_to "Забравена парола", new_password_path('user') %>
+  <%= link_to "Регистрация", " /users/sign_up" %>
+  </div>
+<% end %> 
+      </section><!-- content -->
+    </div>
+    <div class="col span_1_of_4"></div>
+</div>
 
-  <%= f.email_field :email, :autofocus => true, :class => "text-field", :placeholder => "E-mail" %></div>
 
-  <%= f.password_field :password, :class => "text-field", :placeholder => "Password" %> </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div> <input type="submit" value="Sign in", class="button"></div>
-
-  <br />
-  <br />
-
-  <%= render "devise/shared/links" %>
-<% end %>

@@ -8,78 +8,12 @@
 <div class="wrapb">
 	<div class="section group">
 		<div class="col span_1_of_4">
-			<section class="contenta" id="a">
-				<div>
-					<p>Your AD here !</p>
-				</div>
-		
-			</section>
+			
 		</div>
 		<div class="col span_2_of_4">
     		<div class="video-container"><iframe width="640" height="480" src="//www.youtube.com/embed/0UjsXo9l6I8" frameborder="0" allowfullscreen></iframe></div>
 		</div>
-		<div class="col span_1_of_4">
-			<section class="contenta" id="c">
-				<div>
-					<p>Your AD here !</p>
-				</div>
-			</section>
-		</div>
+		
 	</div>
 </div>
-
-<div class="section group">
-		<div class="col span_1_of_4"> </div>
-		<div class="col span_2_of_4">
-			<section id="content">
-				<h1> Вход </h1>
-<%= form_for("user", :url => user_session_path) do |f| %>
-<div>
-  <%= f.email_field :email, :autofocus => true, :class => "text-field", :placeholder => "E-mail" %>
-</div>
-<div>
-  <%= f.password_field :password, :class => "text-field2", :placeholder => "Password" %>
- </div>
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-
-  <div> <input type="submit" value="Sign in", class="button"> 
-  <%= link_to "Forgot your password?", new_password_path('user') %>
-  <%= link_to "Register", new_user_session_path('user') %>
-  </div>
-<% end %> 
-			</section><!-- content -->
-		</div>
-		<div class="col span_1_of_4"></div>
-</div>
-
-<section class="contenta" id="blq">
-	<div class="section group">
-		<div class="col span_1_of_3">
-			<img src="images/pic.jpg" class="round2">
-				<p>
-					<ul class="lili">
-						<li>Име: Иван Лебанов</li>
-						<li>Дейност: зидаромазач</li>
-						</ul>
-				</p>
-		</div>
-		<div class="col span_1_of_3">
-			<img src="images/pic.jpg" class="round2">
-				<ul class="lili">
-					<li>Име: Иван Лебанов</li>
-					<li>Дейност: зидаромазач</li>
-				</ul>
-		</div>
-		<div class="col span_1_of_3">
-				<img src="images/pic.jpg" class="round2">
-				<ul class="lili">
-					<li>Име: Иван Лебанов</li>
-					<li>Дейност: зидаромазач</li>
-				</ul>	
-		</div>
-	</div>
-</section>
-
-
 

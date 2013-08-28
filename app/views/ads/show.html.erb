@@ -32,6 +32,6 @@
 <% end %>
 
 <% if current_user.id == @ad.user_id %>
-  <%= link_to 'Edit', edit_ad_path(@ad) %> |
+  <%= link_to 'Редактирай', edit_ad_path(@ad) %> |
 <% end %>
-<%= link_to 'Back', ads_path %>
+<%= link_to 'Назад', ads_path %>

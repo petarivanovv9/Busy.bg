@@ -6,7 +6,7 @@
 		.menu ul li {display:inline;}
 	</style> 
 
-	<title> Busy net </title>
+	<title> Busy.bg </title>
 
 	 
     <%= javascript_include_tag "application" %>
@@ -64,7 +64,7 @@
 		<nav class="nav right">
 			<ul>
 	 	 		<li class="current"><a href="<%= root_path %>">Начало</a></li>
-				<li id="menu"><%=link_to "Направи обява", new_ad_path %></li>
+				<li id="menu"><%=link_to "Обяви", ads_path %></li>
 			</ul>
 		</nav>
 </div>
@@ -96,7 +96,7 @@
 	
 
 <div id="notifications", style = "float:right;">
-		 Известия...
+		 Известия!
 </div>	
 
 
@@ -108,18 +108,17 @@
 <div id="footer">
 	<div class="umri">
 		<ul class="umretegoveda">
-	 		<li><a href="index.html">Начало</a></li>
+	 		<li><a href="<%= root_path %>">Начало</a></li>
 			<li><a href="signin.html">Профил</a></li>
 			<li><a href="register.html">Съобщения</a></li>
-			<li><a href="register.html">Направи обява</a></li>
 		</ul>	
 	</div>
 	<p> Последвайте ни в социалните мрежи: <br/>	
-		<%= link_to image_tag("facebook.png"), "http://www.facebook.com" %>
-		<%= link_to image_tag("google.png"), "http://www.plus.google.com" %>
-		<%= link_to image_tag("twitter.png"), "http://www.twitter.com" %>
+		<%= link_to image_tag("facebook.png"), "https://www.facebook.com/pages/Busybg/227411807409592?hc_location=timeline" %>
+		<%= link_to image_tag("google.png"), "https://plus.google.com/113525049568122703633/posts?partnerid=gplp0" %>
+		<%= link_to image_tag("twitter.png"), "https://twitter.com/busy_bg" %>
 	</p>
-	<p> All copyrights reserved. <a href="developers.html"> Busy </a> 2013 </p>
+	<p> All copyrights reserved. <a href="developers.html"> Busy.bg </a> 2013 </p>
 </div>
 
 </body>

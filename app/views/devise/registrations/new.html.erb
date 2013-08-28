@@ -1,60 +1,33 @@
-<!--<head>
-<%= stylesheet_link_tag  "application" %> 
-</head> 
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class=>"register"  }) do |f| %>
-  <%= devise_error_messages! %>
-  
-  <h2> Sign up </h2>
-
-
-  <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Name" %>
-
-  <%= f.email_field :email, :autofocus => true, :class=>"text-field", :placeholder=>"E-mail" %>
-
-  <%= f.password_field :password, :class=>"text-field", :placeholder=>"Password" %></div>
-
-  <%= f.password_field :password_confirmation, :class=>"text-field", :placeholder=>"Repeat Password" %>
-
-  <div> <input type="submit" value="Sign up", class="button"></div>
- 
-  <%= render "devise/shared/links" %>
-<% end %>
-
--->
-
-
-<br />
-<br />
 <div class="section group">
     <div class="col span_1_of_4"> </div>
-    <div class="col span_2_of_4">
+<div class="col span_2_of_4">
       <section id="content">
-        <h1> Регистрация </h1>
-
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class=>"register"  }) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :action => ""  }) do |f| %>
   <%= devise_error_messages! %>
-  
-<div>
-  <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Име" %>
-</div>
-<div>
-  <%= f.email_field :email, :autofocus => true, :class=>"text-field1", :placeholder=>"E-mail" %>
-</div>
-<div>
-  <%= f.password_field :password, :class=>"text-field2", :placeholder=>"Парола" %>
-</div>
-<div>
-  <%= f.password_field :password_confirmation, :class=>"text-field2", :placeholder=>"Повтори парола" %>
-</div>
-  <div> <input type="submit" value="Регистрирай се", class="button"></div>
-
-  <%= render "devise/shared/links" %>
+      <h1>Регистрация </h1>
+      <div>
+        <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Име и фамилия", :id=>"username" %>
+      </div>
+       <div>
+        <%= f.email_field :email, :autofocus => true, :class=>"text-field1", :placeholder=>"Електронна поща", :id=>"mail" %>
+      </div>
+      <div>
+        <%= f.password_field :password, :class=>"text-field2", :placeholder=>"Парола", :id=>"password" %>
+      </div>
+        <div>
+        <%= f.password_field :password_confirmation, :class=>"text-field2", :placeholder=>"Повтори парола", :id=>"password" %>
+      </div>
+      <div>
+        <input type="submit" value="Регистрация" />
+      </div>
+     <!-- <%= render "devise/shared/links" %> -->
 <% end %>
-    </section>
+  </section><!-- content -->
     </div>
     <div class="col span_1_of_4"></div>
   </div>
 
 
-  
+
+<br />
+<br />
