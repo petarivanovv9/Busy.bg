@@ -43,12 +43,16 @@ $(document).ready(function(){
   var timelyrefreshnotifications = function(){
     url = '/check_for_notifications'
       $.get(url,function(data,status){
-        $('#notifications').html(data);
-          return false;
+        console.log(data);
+        if (data.count > 0) {
+          var text = "Имате " + data.count + " нови кандидатсвания по Вашите обяви."
+          var link = "<a href='/notifications'>" + text + "</a>";
+          $('#notifications').html(link);
+        }
       });
   };
   
-  // setInterval(timelyrefreshnotifications, 6000);
+   setInterval(timelyrefreshnotifications, 6000);
 
   $(".reply_link").click(function () {
     $("#reply_form").show("slow");
@@ -58,5 +62,14 @@ $(document).ready(function(){
   $('.message_form').submit(function(e) {
     $(this).hide("slow");
   }); 
+
+  $('#button_apply').click(function(event) {
+    event.preventDefault();
+
+    $.post('/ads/apply', {ad_id: $('#ad_id').val()}, function() {
+      $("#apply_message").show();
+      $('#button_apply').hide();
+    });
+  });
 });
 

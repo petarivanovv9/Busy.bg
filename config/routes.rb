@@ -17,10 +17,12 @@ TheBusyNet::Application.routes.draw do
   end
 
   match '/check_for_notifications' => 'notifications#refresh'
+  match '/notifications' => 'notifications#index'
   match '/send_message' => 'users#send_message'
   match '/reply_message' => 'users#reply_message'
   match "get_activities/:role_id", to: 'role_activities#get_activities', via: [:post, :get]
   match '/users/:user_id' => 'users#show', as: 'user_profile'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

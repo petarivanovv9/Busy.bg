@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Описание</th>
+    <th>Потребител</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ad_apps.each do |ad_app| %> 
+  <tr>
+    <td><%= link_to ad_app.ad.description, "/ads/#{ad_app.ad_id}" %></td>
+    <td><%= ad_app.user.name  %></td>
+    <td><%= link_to 'Приеми', '' %></td>
+    <td><%= link_to 'Откажи', '' %></td>
+  </tr>
+<% end %>
+</table>

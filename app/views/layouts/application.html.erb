@@ -12,7 +12,7 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -115,7 +115,7 @@
 	</div>
 	<p> Последвайте ни в социалните мрежи: <br/>	
 		<%= link_to image_tag("facebook.png"), "https://www.facebook.com/pages/Busybg/227411807409592?hc_location=timeline" %>
-		<%= link_to image_tag("google.png"), "https://plus.google.com/113525049568122703633/posts?partnerid=gplp0" %>
+		<%= link_to image_tag("google.png"), "https://plus.google.com/113525049568122703633/posts?partnerid=gplp0", target: '_blank' %>
 		<%= link_to image_tag("twitter.png"), "https://twitter.com/busy_bg" %>
 	</p>
 	<p> All copyrights reserved. <a href="developers.html"> Busy.bg </a> 2013 </p>

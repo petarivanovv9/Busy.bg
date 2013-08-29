@@ -33,6 +33,9 @@ class UsersController < ApplicationController
 	end 
 
   def show
+    if current_user.role_id.blank?
+      redirect_to currnet_user_properties_path, alert: "asdasd"
+    end
     @user = User.find(params[:user_id])
   end
 

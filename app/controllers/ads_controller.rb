@@ -18,6 +18,7 @@ class AdsController < InheritedResources::Base
     ad.max_price = ad_params[:max_price]
     ad.period = ad_params[:period]
     ad.city_id = ad_params[:city_id]
+    ad.description = ad_params[:description]
     ad.deadline = Date.new ad_params["deadline(1i)"].to_i, ad_params["deadline(2i)"].to_i, ad_params["deadline(3i)"].to_i
     ad.save
 
@@ -56,6 +57,8 @@ class AdsController < InheritedResources::Base
    ad_applications.user_id = current_user.id
    ad_applications.ad_id = params[:ad_id]
    ad_applications.save
+
+   render nothing: true
   end
 end
  

@@ -29,11 +29,9 @@
 
 <table>
   <tr>
+    <th>Описание</th>
     <th>Потребител</th>
-    <th>Максимална цена</th>
     <th>Град</th>
-    <th>Крайна дата</th>
-    <th>Период в дни</th>
     <th></th>
     <th></th>
     <th></th>
@@ -43,14 +41,12 @@
 
 <% @ads.each do |ad| %>
   <tr>
+    <td><%= ad.description %></td>
     <td><%= ad.user.try(:name) %></td>
-    <td><%= ad.max_price %></td>
     <td><%= ad.city.try(:name) %></td>
-    <td><%= ad.deadline %></td>
-    <td><%= ad.period %></td>
     <td><%= link_to 'Покажи', ad %></td>
-    <td><%= link_to 'Редактирай', edit_ad_path(ad) %></td>
-    <td><%= link_to 'Изтрий', ad, method: :delete, data: { confirm: 'Потвърдете' } %></td>
+<!--     <td><%= link_to 'Редактирай', edit_ad_path(ad) %></td>
+    <td><%= link_to 'Изтрий', ad, method: :delete, data: { confirm: 'Потвърдете' } %></td> -->
   </tr>
 <% end %>
 </table>

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area(:description, :size => '30x2') %>
+  </div>
+  <div class="field">
     <%= f.label :ad_activities %><br />
     <%= f.select :ad_activities, Activity.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
   </div>
