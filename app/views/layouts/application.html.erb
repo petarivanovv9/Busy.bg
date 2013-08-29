@@ -49,9 +49,9 @@
 			<div style= "float:right;">
 				<%  if current_user.present? %>
 					<%= link_to current_user.name, user_profile_path(user_id: current_user.id) %>
-					<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+					<%= link_to 'Изход', destroy_user_session_path, method: :delete %>
 				<% else %> 
-			  		<%= link_to "Sign In", '/users/sign_in' %>
+			  		<%= link_to "Вход", '/users/sign_in' %>
 				<% end %>
 			</div>
 		</div>
@@ -63,13 +63,16 @@
 <div class="wrap">
 		<nav class="nav right">
 			<ul>
-	 	 		<li class="current"><a href="<%= root_path %>">Начало</a></li>
-				<li id="menu"><%=link_to "Обяви", ads_path %></li>
+				<li class="current"><a href="<%= ads_path %>">Обяви</a></li>
+	 	 		<li class="current"><a href="<%= notifications_path %>">Известия</a></li>
+	 	 		<li class="current"><a href="<%=  %>">Съобщения</a></li>
 			</ul>
 		</nav>
 </div>
 
+
 <div class="section group">
+	</br>
 	<div class="col span_1_of_3">
 			<ul class="tt-wrapper2">
 				<li>
@@ -96,7 +99,7 @@
 	
 
 <div id="notifications", style = "float:right;">
-		 Известия!
+Известия...
 </div>	
 
 
@@ -108,15 +111,16 @@
 <div id="footer">
 	<div class="umri">
 		<ul class="umretegoveda">
-	 		<li><a href="<%= root_path %>">Начало</a></li>
-			<li><a href="signin.html">Профил</a></li>
-			<li><a href="register.html">Съобщения</a></li>
+	 		<li><a href="<%= ads_path %>">Обяви</a></li>
+			<li><a href="<%= notifications_path %>">Известия</a></li>
+			<li><a href="<%=  %>">Съобщения</a></li>
+
 		</ul>	
 	</div>
 	<p> Последвайте ни в социалните мрежи: <br/>	
-		<%= link_to image_tag("facebook.png"), "https://www.facebook.com/pages/Busybg/227411807409592?hc_location=timeline" %>
+		<%= link_to image_tag("facebook.png"), "https://www.facebook.com/pages/Busybg/227411807409592?hc_location=timeline", target: '_blank' %>
 		<%= link_to image_tag("google.png"), "https://plus.google.com/113525049568122703633/posts?partnerid=gplp0", target: '_blank' %>
-		<%= link_to image_tag("twitter.png"), "https://twitter.com/busy_bg" %>
+		<%= link_to image_tag("twitter.png"), "https://twitter.com/busy_bg", target: '_blank' %>
 	</p>
 	<p> All copyrights reserved. <a href="developers.html"> Busy.bg </a> 2013 </p>
 </div>
