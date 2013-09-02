@@ -3,31 +3,33 @@
       <div class="col span_2_of_4"> 
          <section class="contenta">
 
-<a href = "/ads/new">  Направи обява </a>
 
 <%= form_tag :method => :get do %>
+  <a href = "/ads/new">  Направи обява </a>
+  <p>ТЪРСИ СПЕЦИАЛИСТ:</p>
   <div class="field">
-    <%= label_tag :city_id %><br />
+    Град:<br />
     <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
   </div>
   <div class="field">
-    <%= label_tag :ad_activities %><br />
+    Дейности:<br />
     <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
   </div>
   <div>
-    <%= label_tag :min_price %><br />
+    Минимална цена:<br />
     <%= text_field_tag(:min_price) %>
   </div>
   <div>
-    <%= label_tag :max_price %><br />
+    Максимална цена:<br />
     <%= text_field_tag(:max_price) %>
   </div>
-  <div class="actions">
+
+  <div class="actions" >
     <input type="submit" value="Търси", class="exit">
   </div>
+
 <% end %>
   <br />
-  <h3>Име</h3>
 
   <ul class="bullet1">
 
@@ -38,7 +40,7 @@
         <a href = "/users/<%= it.id %>", class="viewprofile" > 
           <span>
             <p>Цена за час: <%= it.price %> лв. </p>
-            <p>Качества: <%= it.activities.map{|activity| activity.name}.join(', ') %> </p>
+            <p>Дейности: <%= it.activities.map{|activity| activity.name}.join(', ') %> </p>
           </span>
           <%= it.name %>
         </a>
@@ -48,8 +50,7 @@
 
   </ul>
   
-  
-</section>
+  </section>
 </div>
 <div class="col span_1_of_4"> </div>
 </div>

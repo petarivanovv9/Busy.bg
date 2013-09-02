@@ -4,7 +4,9 @@
          <section class="contenta">
 
 <h2>Обяви</h2>
-<%= form_tag('/ads', :method => :get) do %>
+<%= form_tag('/ads', :method => :get) do %>  
+<%= link_to 'Направи обява', new_ad_path %>
+  <p>ТЪРСИ ОБЯВИ:</p>
   <div class="field">
     Град:<br />
     <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
@@ -22,7 +24,7 @@
     <%= text_field_tag(:max_price) %>
   </div>
 
-  <div class="actions">
+  <div  class="actions">
     <input type="submit" value="Търси", class="exit">
   </div>
 <% end %>
@@ -45,16 +47,16 @@
     <td><%=h truncate(ad.description, :length => 30)%></td>
     <td><%= ad.user.try(:name) %></td>
     <td><%= ad.city.try(:name) %></td>
+    <% if current_user.present? %>
     <td><%= link_to 'Покажи', ad %></td>
 <!--     <td><%= link_to 'Редактирай', edit_ad_path(ad) %></td>
     <td><%= link_to 'Изтрий', ad, method: :delete, data: { confirm: 'Потвърдете' } %></td> -->
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'Нова обява', new_ad_path %>
 
 </section>
 </div>
