@@ -8,7 +8,7 @@
     
     </section> -->
     </div>
-<div class="col span_2_of_4">
+<div align = "right" class="col span_2_of_4">
       <section class="contenta">
     <img src="http://lorempixel.com/300/300/people" class="round">  
     <p class="pro">
@@ -17,16 +17,16 @@
     <li>Дейности: <%= @user.activities.map{|activity| activity.name}.join(', ') %> </li>
     <li>Сфера:  <%= @user.role.name %></li>
     <li>Град: <%= @user.city.name %></li>
-    <li>Телефон: <%= @user.phone %></li>
+<!--     <li>Телефон: <%= @user.phone %></li>
     <li>Портфолио:<img src="<%= @user.portfolio_file %>" ></li>
-    <li>Портфолио: <%= @user.portfolio_link %> </li>
+ -->    <li>Уеб сайт: <%= @user.portfolio_link %> </li>
     <li>Описание: <%= @user.portfolio_description %> </li>
     <li>Цена за час: <%= @user.price %></li>
     </ul>
     </p>
     <div>
     <% if current_user.id == @user.id %>
-  <%=link_to 'Edit', '/users/properties' %>
+  <%=link_to 'Редактирай', '/users/properties' %>
   <ul>
     <% @user.received_messages.each do |received_message| %>
       <li>

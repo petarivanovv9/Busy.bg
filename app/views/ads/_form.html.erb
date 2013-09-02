@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :description %><br />
+    Описание:<br />
     <%= f.text_area(:description, :size => '30x2') %>
   </div>
   <div class="field">
-    <%= f.label :ad_activities %><br />
+     Дейности:<br />
     <%= f.select :ad_activities, Activity.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
   </div>
   <div class="field">
-    <%= f.label :max_price %><br />
+    Цена за час:<br />
     <%= f.number_field :max_price %>
   </div>
   <div class="field">
-    <%= f.label :city_id %><br />
+    Град:<br />
     <%= f.collection_select :city_id, City.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :deadline %><br />
+    Крайна дата:<br />
     <%= f.date_select :deadline %>
   </div>
   <div class="field">
-    <%= f.label :period %><br />
+    Период:<br />
     <%= f.text_field :period %>
   </div>
   <div class="actions">

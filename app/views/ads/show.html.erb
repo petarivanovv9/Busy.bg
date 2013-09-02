@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Description:</b>
+  <b>Описание:</b>
   <%= @ad.description %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b>Потребител:</b>
   <%= @ad.user.name %>
 </p>
 
 <p>
-  <b>Max price:</b>
+  <b>Цена за час:</b>
   <%= @ad.max_price %>
 </p>
 
 <p>
-  <b>City:</b>
+  <b>Град:</b>
   <%= @ad.city.name %>
 </p>
 
 <p>
-  <b>Deadline:</b>
+  <b>Крайна дата:</b>
   <%= @ad.deadline %>
 </p>
 
 <p>
-  <b>Period:</b>
+  <b>Период:</b>
   <%= @ad.period %>
 </p>
 <% if current_user.id != @ad.user_id %>

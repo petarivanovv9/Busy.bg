@@ -52,6 +52,8 @@
 					<%= link_to 'Изход', destroy_user_session_path, method: :delete %>
 				<% else %> 
 			  		<%= link_to "Вход", '/users/sign_in' %>
+
+			  		<%= link_to "Регистрация", '/users/sign_up' %>
 				<% end %>
 			</div>
 		</div>
@@ -63,9 +65,12 @@
 <div class="wrap">
 		<nav class="nav right">
 			<ul>
+				<li class="current"><a href="<%= root_path %>">Начало</a></li>
 				<li class="current"><a href="<%= ads_path %>">Обяви</a></li>
+	 	 		<% if current_user.present? %>
 	 	 		<li class="current"><a href="<%= notifications_path %>">Известия</a></li>
 	 	 		<li class="current"><a href="<%=  %>">Съобщения</a></li>
+	 	 		<%end%>
 			</ul>
 		</nav>
 </div>
@@ -111,9 +116,13 @@
 <div id="footer">
 	<div class="umri">
 		<ul class="umretegoveda">
-	 		<li><a href="<%= ads_path %>">Обяви</a></li>
-			<li><a href="<%= notifications_path %>">Известия</a></li>
-			<li><a href="<%=  %>">Съобщения</a></li>
+		<li><a href="<%= root_path %>">Начало</a></li>
+		<li><a href="<%= ads_path %>">Обяви</a></li>
+		<% if current_user.present? %>
+		<li><a href="<%= user_profile_path(user_id: current_user.id) %>">Профил</a></li>
+		<li><a href="<%= notifications_path %>">Известия</a></li>
+		<li><a href="<%=  %>">Съобщения</a></li>
+		<% end %>
 
 		</ul>	
 	</div>

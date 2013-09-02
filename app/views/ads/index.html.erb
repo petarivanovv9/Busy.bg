@@ -6,19 +6,19 @@
 <h2>Обяви</h2>
 <%= form_tag('/ads', :method => :get) do %>
   <div class="field">
-    <%= label_tag :city_id %><br />
+    Град:<br />
     <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
   </div>
   <div class="field">
-    <%= label_tag :ad_activities %><br />
+    Дейности:<br />
     <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
   </div>
   <div>
-    <%= label_tag :min_price %><br />
+    Минимална цена:<br />
     <%= text_field_tag(:min_price) %>
   </div>
   <div>
-    <%= label_tag :max_price %><br />
+    Максимална цена:<br />
     <%= text_field_tag(:max_price) %>
   </div>
 
