@@ -42,7 +42,7 @@
 
 <% @ads.each do |ad| %>
   <tr>
-    <td><%= ad.description %></td>
+    <td><%=h truncate(ad.description, :length => 30)%></td>
     <td><%= ad.user.try(:name) %></td>
     <td><%= ad.city.try(:name) %></td>
     <td><%= link_to 'Покажи', ad %></td>
