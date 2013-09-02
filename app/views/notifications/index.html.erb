@@ -10,8 +10,8 @@
   <tr>
     <td><%= link_to ad_app.ad.description, "/ads/#{ad_app.ad_id}" %></td>
     <td><%= ad_app.user.name  %></td>
-    <td><%= link_to 'Приеми', '' %></td>
-    <td><%= link_to 'Откажи', '' %></td>
+    <td><%= link_to 'Приеми', "", class: "notification_accept", 'data-app-id' => "#{ad_app.id}"  %></td>
+    <td><%= link_to 'Откажи', "", class: "notification_reject", 'data-app-id' => "#{ad_app.id}"  %></td>
   </tr>
 <% end %>
 </table>

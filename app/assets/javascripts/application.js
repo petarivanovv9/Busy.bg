@@ -41,18 +41,30 @@ $(document).ready(function(){
   });
 
   var timelyrefreshnotifications = function(){
-    url = '/check_for_notifications'
-      $.get(url,function(data,status){
+      var url = '/check_for_notifications';
+      console.log('call ...');
+
+      $.get(url, function(data,status){
         console.log(data);
+        
         if (data.count > 0) {
-          var text = "Имате " + data.count + " нови кандидатсвания по Вашите обяви."
+          var text = "Имате " + data.count + " нови кандидатсвания по Вашите обяви.";
           var link = "<a href='/notifications'>" + text + "</a>";
           $('#notifications').html(link);
+        }
+
+        console.log('-----------------');
+        console.log(data.owner_phone);
+
+        if ( data.owner_phone.length > 0) {
+          var text = "Вашата кандидатура е приета успешно. Телефон за връзка: " + data.owner_phone;
+          console.log(text);
+          $('#notifications').html("<div> " + text + "</div>");
         }
       });
   };
   
-   setInterval(timelyrefreshnotifications, 6000);
+    setInterval(timelyrefreshnotifications, 6000);
 
   $(".reply_link").click(function () {
     $("#reply_form").show("slow");
@@ -71,5 +83,26 @@ $(document).ready(function(){
       $('#button_apply').hide();
     });
   });
+
+$('.notification_accept').click(function(event) {
+    event.preventDefault();
+
+    var notification_id = $(this).data('app-id');
+    
+    $.post('/notifications_accept', {notification_id: notification_id}, function(response) {
+      console.log('dasdasdasdasdasfas');
+    });
+  });
+
+$('.notification_reject').click(function(event) {
+    event.preventDefault();
+
+    var notification_id = $(this).data('app-id');
+    
+    $.post('/notifications_reject', {notification_id: notification_id}, function(response) {
+      console.log('dasdasdasdasdasfas');
+    });
+  });
+
 });
 
