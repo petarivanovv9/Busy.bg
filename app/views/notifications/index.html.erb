@@ -4,14 +4,33 @@
     <th>Потребител</th>
     <th></th>
     <th></th>
+
   </tr>
 
 <% @ad_apps.each do |ad_app| %> 
   <tr>
-    <td><%= link_to ad_app.ad.description, "/ads/#{ad_app.ad_id}" %></td>
+    <td><%= link_to ad_app.ad.description || "Описание", "/ads/#{ad_app.ad_id}" %></td>
     <td><%= ad_app.user.name  %></td>
     <td><%= link_to 'Приеми', "", class: "notification_accept", 'data-app-id' => "#{ad_app.id}"  %></td>
     <td><%= link_to 'Откажи', "", class: "notification_reject", 'data-app-id' => "#{ad_app.id}"  %></td>
   </tr>
 <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>Описание</th>
+    <th>Име</th>
+    <th>Телефон: </th>
+  </tr>
+
+<% @ad_apps_accepted.each do |ad_app_accepted| %> 
+  <tr>
+    <td><%= link_to ad_app_accepted.ad.description || "Описание", "/ads/#{ad_app_accepted.ad_id}" %></td>
+    <td><%= ad_app_accepted.ad.user.name  %></td>
+    <td><%= ad_app_accepted.ad.user.phone  %></td>
+  </tr>
+<% end %>
+
+
 </table>
