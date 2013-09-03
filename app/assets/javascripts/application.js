@@ -15,6 +15,7 @@
 //= require_tree .
 
 $(document).ready(function(){
+
   $('#user_role_id').on('change', function(){
     var role = $('#user_role_id').val();
     if (role != "") {
@@ -41,10 +42,39 @@ $(document).ready(function(){
   });
 
   var timelyrefreshnotifications = function(){
+
+    $.noty.defaults = {
+    layout: 'topRight',
+    theme: 'defaultTheme',
+    type: 'information',
+    text: '',
+    dismissQueue: true, // If you want to use queue feature set this true
+    template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+    animation: {
+        open: {height: 'toggle'},
+        close: {height: 'toggle'},
+        easing: 'swing',
+        speed: 500 // opening & closing animation speed
+    },
+    timeout: false, // delay for closing event. Set false for sticky notifications
+    force: false, // adds notification to the beginning of queue when set to true
+    modal: false,
+    maxVisible: 5, // you can set max visible notification for dismissQueue true option
+    closeWith: ['click'], // ['click', 'button', 'hover']
+    callback: {
+        onShow: function() {},
+        afterShow: function() {},
+        onClose: function() {},
+        afterClose: function() {}
+    },
+    buttons: false // an array of buttons
+  };
+
+  var n = noty({text: ''});
       var url = '/check_for_notifications';
       console.log('call ...');
 
-      var notifications = '';
+      // var notifications = '';
 
       $.get(url, function(data,status){
         console.log(data);
@@ -52,7 +82,7 @@ $(document).ready(function(){
         if (data.count > 0) {
           var text = "Имате " + data.count + " нови кандидатсвания по Вашите обяви.";
           var link = "<a href='/notifications'>" + text + "</a>";
-          notifications += link;
+          n += link;
         }
 
         console.log('-----------------');
@@ -61,14 +91,14 @@ $(document).ready(function(){
         if ( typeof(data.owner_phone) != "undefined" && data.owner_phone.length > 0) {
           var text = "Вашата кандидатура е приета успешно. Телефон за връзка: " + data.owner_phone;
           var link = "<a href='/notifications'>" + text + "</a>";
-          notifications += link;
+          n += link;
         }
 
-         $('#notifications').html(notifications);
+         $('.noty_message').html(n);
       });
   };
   
-    setInterval(timelyrefreshnotifications, 6000);
+  setInterval(timelyrefreshnotifications, 6000);
 
   $(".reply_link").click(function () {
     $("#reply_form").show("slow");
@@ -88,7 +118,7 @@ $(document).ready(function(){
     });
   });
 
-$('.notification_accept').click(function(event) {
+  $('.notification_accept').click(function(event) {
     event.preventDefault();
 
     var notification_id = $(this).data('app-id');
@@ -99,7 +129,7 @@ $('.notification_accept').click(function(event) {
     });
   });
 
-$('.notification_reject').click(function(event) {
+  $('.notification_reject').click(function(event) {
     event.preventDefault();
 
     var notification_id = $(this).data('app-id');
@@ -108,6 +138,5 @@ $('.notification_reject').click(function(event) {
       console.log('dasdasdasdasdasfas');
     });
   });
-
 });
 
