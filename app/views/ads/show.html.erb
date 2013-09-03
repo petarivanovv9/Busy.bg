@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
 
+
+<p id="notice"><%= notice %></p>
+<center>
 <p>
   <b>Описание:</b>
   <%= @ad.description %>
@@ -32,7 +38,7 @@
 <% if current_user.id != @ad.user_id %>
   <%= form_tag '/ads/apply', :method => :post do %>
     <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
-    <input id="button_apply" name="commit" type="submit" value="Кандидатствай">
+    <input id="button_apply" name="commit" type="submit" class="exit" value="Кандидатствай">
   <% end %>
 <% end %>
 <div id="apply_message" style="display: none;">
@@ -42,3 +48,8 @@
   <%= link_to 'Редактирай', edit_ad_path(@ad) %> |
 <% end %>
 <%= link_to 'Назад', ads_path %>
+</center>
+</section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>

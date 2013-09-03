@@ -1,40 +1,50 @@
+
+
+
 <div class="section group">
       <div class="col span_1_of_4"> </div>
       <div class="col span_2_of_4"> 
          <section class="contenta">
-
+<center>
 <h2>Обяви</h2>
 <%= form_tag('/ads', :method => :get) do %>  
-<%= link_to 'Направи обява', new_ad_path %>
-  <p>ТЪРСИ ОБЯВИ:</p>
-  <div class="field">
+
+</br>
+</br>
+  <p>ТЪРСИ:</p>
+</br>
+
+      <div class="field" >
     Град:<br />
-    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
-  </div>
-  <div class="field">
+    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]), { :class => 'wrapper-dropdown-5' }%>
+   </div>
+</br>
+  <div id="dd" class="field">
     Дейности:<br />
-    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]), { :class => 'wrapper-dropdown-5' } %>
   </div>
-  <div>
+
+  <!-- <div>
     Минимална цена:<br />
     <%= text_field_tag(:min_price) %>
   </div>
   <div>
     Максимална цена:<br />
     <%= text_field_tag(:max_price) %>
-  </div>
+  </div> -->
 
   <div  class="actions">
     <input type="submit" value="Търси", class="exit">
   </div>
 <% end %>
+
  
 
 <table>
   <tr>
-    <th>Описание</th>
-    <th>Потребител</th>
-    <th>Град</th>
+    <th>Описание:</th>
+    <th>Потребител:</th>
+    <th>Град:</th>
     <th></th>
     <th></th>
     <th></th>
@@ -55,10 +65,47 @@
   </tr>
 <% end %>
 </table>
-
 <br />
+</center>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript">
+
+   function DropDown(el) {
+    this.dd = el;
+    this.initEvents();
+   }
+   DropDown.prototype = {
+    initEvents : function() {
+     var obj = this;
+
+     obj.dd.on('click', function(event){
+      $(this).toggleClass('active');
+      event.stopPropagation();
+     }); 
+    }
+   }
+
+   $(function() {
+
+    var dd = new DropDown( $('#dd') );
+
+    $(document).click(function() {
+     // all dropdowns
+     $('.wrapper-dropdown-5').removeClass('active');
+    });
+
+   });
+
+  </script>
+
+
+
+
 
 </section>
 </div>
 <div class="col span_1_of_4"> </div>
 </div>
+  

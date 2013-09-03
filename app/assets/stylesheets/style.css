@@ -29,8 +29,9 @@ text-align:center;
 }
 
 .exit{
-width:70px;
+width:120px;
 background: rgb(126,196,237);
+
 	background: -moz-linear-gradient(top,  rgba(126,196,237,1) 0%, rgba(18,152,137,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(126,196,237,1) 0%,rgba(18,152,137,1) 100%);
 	background: -o-linear-gradient(top,  rgba(126,196,237,1) 0%,rgba(18,152,137,1) 100%);
@@ -50,7 +51,7 @@ background: rgb(126,196,237);
 	border: 1px solid #2481b6;
 	color: #fff;
 	cursor: pointer;
-	float: left;
+	float: center;
 	font: bold 15px Helvetica, Arial, sans-serif;
 	height: 35px;
 	margin:5%;
@@ -516,7 +517,7 @@ ul li {
 ul li:hover {
 
 }
-ul.bullet1 li a.viewprofile{
+ul.abullet1 li a.viewprofile{
 text-decoration:none;
   color: #333;
 	padding-top: 40px;
@@ -790,4 +791,168 @@ background-position: 10px -23px !important }
 	width: 100%;
 	height: 100%;
 }
+@import url('demo.css');
+@import url('font-awesome.css');
 
+/* GLOBALS */
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.wrapper-demo {
+    margin: 60px 0 0 0;
+    *zoom: 1;
+    font-weight: 400;
+}
+
+.wrapper-demo:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* DEMO 5 */
+
+.wrapper-dropdown-5 {
+    /* Size & position */
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    padding: 12px 15px;
+
+    /* Styles */
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-5:after { /* Little arrow */
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #4cbeff transparent;
+}
+
+.wrapper-dropdown-5 .dropdown {
+    /* Size & position */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    /* Styles */
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-top: none;
+    border-bottom: none;
+    list-style: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    /* Hiding */
+    max-height: 0;
+    overflow: hidden;
+}
+
+.wrapper-dropdown-5 .dropdown li {
+    padding: 0 10px ;
+}
+
+.wrapper-dropdown-5 .dropdown li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+    transition: all 0.3s ease-out;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.wrapper-dropdown-5 .dropdown li:last-of-type a {
+    border: none;
+}
+
+.wrapper-dropdown-5 .dropdown li i {
+    margin-right: 5px;
+    color: inherit;
+    vertical-align: middle;
+}
+
+/* Hover state */
+
+.wrapper-dropdown-5 .dropdown li:hover a {
+    color: #57a9d9;
+}
+
+/* Active state */
+
+.wrapper-dropdown-5.active {
+    border-radius: 5px 5px 0 0;
+    background: #4cbeff;
+    box-shadow: none;
+    border-bottom: none;
+    color: white;
+}
+
+.wrapper-dropdown-5.active:after {
+    border-color: #82d1ff transparent;
+}
+
+.wrapper-dropdown-5.active .dropdown {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    max-height: 400px;
+}
+
+/* No CSS3 support: none */
+.design11{
+background-image:url(gradient1.png);
+border:1px solid #85c2de;
+padding:9px;
+-webkit-border-radius:7px;
+-moz-border-radius:7px;
+font-size:15px;
+font-weight:bold;
+color: #333;
+}
+
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}

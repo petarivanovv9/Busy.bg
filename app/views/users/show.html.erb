@@ -24,10 +24,11 @@
     <li>Цена за час: <%= @user.price %></li>
     </ul>
     </p>
+  </br>
     <div>
     <% if current_user.id == @user.id %>
   <%=link_to 'Редактирай', '/users/properties' %>
-  <ul>
+  <!-- <ul>
     <% @user.received_messages.each do |received_message| %>
       <li>
         <%= received_message.sent_messageable.name %> 
@@ -61,7 +62,7 @@
   <% end %>
 <% end %> 
 
-  </ul>
+  </ul> -->
 </div>
   </section><!-- content -->
     </div>

@@ -5,29 +5,32 @@
 
 
 <%= form_tag :method => :get do %>
-  <a href = "/ads/new">  Направи обява </a>
+
+  <center>
   <p>ТЪРСИ СПЕЦИАЛИСТ:</p>
+  </br>
   <div class="field">
     Град:<br />
-    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]  )%>
+    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]), {:class => 'wrapper-dropdown-5'} %>
   </div>
+  </br>
   <div class="field">
     Дейности:<br />
-    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]),  {:multiple => true} %>
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]), {:class => 'wrapper-dropdown-5'} %>
   </div>
-  <div>
+<!--   <div>
     Минимална цена:<br />
     <%= text_field_tag(:min_price) %>
   </div>
   <div>
     Максимална цена:<br />
     <%= text_field_tag(:max_price) %>
-  </div>
+  </div> -->
 
   <div class="actions" >
     <input type="submit" value="Търси", class="exit">
   </div>
-
+</center>
 <% end %>
   <br />
 
