@@ -24,6 +24,7 @@
     <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]), { :class => 'wrapper-dropdown-5' } %>
   </div>
 
+ 
   <!-- <div>
     Минимална цена:<br />
     <%= text_field_tag(:min_price) %>
@@ -36,10 +37,12 @@
   <div  class="actions">
     <input type="submit" value="Търси", class="exit">
   </div>
-<% end %>
+  <% end %>
+  <%= link_to 'Направи обява', new_ad_path %>
 
- 
-
+</br>
+</br>
+</br>
 <table>
   <tr>
     <th>Описание:</th>
