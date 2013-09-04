@@ -1,5 +1,6 @@
 /*
- * require chosen.css
+ *= require style
+ *= require demo
  */
  body {
 	font-family: Helvetica;
