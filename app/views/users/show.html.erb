@@ -25,8 +25,15 @@
  -->
     <% if current_user.role.present? && current_user.role.name != "Клиент" %>
     <li><b>Уеб сайт:</b> <%= @user.portfolio_link %> </li>
-    <li><b>Описание:</b> <%= @user.portfolio_description %> </li>
-    <li><b>Цена за час:</b> <%= @user.price %></li>
+    <li><b>Цена за час:</b> <%= @user.price %></li>  
+  </br>
+  </br>
+  </br>
+  </br>
+    <div align = "center" style="word-wrap: break-word; width: 300px">
+      <b>Описание:</b> <%= @user.portfolio_description %> 
+    </div>
+    
     </ul>
     </p>
     <% end %>

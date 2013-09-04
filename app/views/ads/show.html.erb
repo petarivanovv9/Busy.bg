@@ -7,34 +7,36 @@
 <p id="notice"><%= notice %></p>
 <center>
 <p>
-  <b>Описание:</b>
-  <%= @ad.description %>
+</br>
+  <div align = "center" style="word-wrap: break-word; width: 300px">
+  <b>Описание:</b><%= @ad.description %> 
+  </div>
 </p>
-
+</br>
 <p>
   <b>Потребител:</b>
   <%= @ad.user.name %>
 </p>
-
+</br>
 <p>
   <b>Цена за час:</b>
   <%= @ad.max_price %>
 </p>
-
+</br>
 <p>
   <b>Град:</b>
   <%= @ad.city.name %>
 </p>
-
-<p>
+<!-- <p>
   <b>Крайна дата:</b>
   <%= @ad.deadline %>
-</p>
-
+</p> -->
+</br>
 <p>
   <b>Период:</b>
   <%= @ad.period %>
 </p>
+</br>
 <% if current_user.role.present? && current_user.role.name != "Клиент" %>
   <% if current_user.id != @ad.user_id %>
     <%= form_tag '/ads/apply', :method => :post do %>

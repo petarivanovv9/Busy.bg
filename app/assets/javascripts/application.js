@@ -92,7 +92,7 @@ $('.chosen-select').chosen();
       console.log(data.owner_phone);
 
       if ( typeof(data.owner_phone) != "undefined" && data.owner_phone.length > 0) {
-        var text = "Вашата кандидатура е приета успешно. Телефон за връзка: " + data.owner_phone;
+        var text =  " Някой прие вашата кандидатура." ;
         var link = "<a href='/notifications'>" + text + "</a>";
         // n += link;
         noty({text: link});

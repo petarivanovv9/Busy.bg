@@ -21,6 +21,7 @@
 <% end %>
 </table>
 
+<% if current_user.role.present? && current_user.role.name != "Клиент" %>
 <table>
   <tr>
     <th>Описание</th>
@@ -35,7 +36,7 @@
     <td><%= ad_app_accepted.ad.user.phone  %></td>
   </tr>
 <% end %>
-
+<% end %>
 </table>
 </center>
 </section>

@@ -13,13 +13,15 @@
     <%= f.select :role_id, Role.all.collect {|x| [x.name, x.id]}, {}, {:class => 'wrapper-dropdown-5'}  %>
   </div> 
   
+  <div id='select-activity'>
+  </div>
+
   <div>
    Телефон:<br />
    <%= f.text_field :phone, {:class => 'design11'}  %>
   </div> 
 
-  <div id='select-activity'>
-  </div>
+  
   <% if current_user.role.present? && current_user.role.name != "Клиент" %>
   <div>
    Цена за час:<br />
@@ -33,7 +35,7 @@
  
   <div>
     Описание:<br />
-    <%= f.text_area(:portfolio_description, :size => '30x2',:maxlength => "150", :class => 'design11') %>
+    <%= f.text_area(:portfolio_description, :size => '30x2',:maxlength => "250", :class => 'design11') %>
   </div>
   <% end %>
 
