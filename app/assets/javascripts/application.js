@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen.jquery
 //= require_tree .
 
 $(document).ready(function(){
-
+$('.chosen-select').chosen();
   $('#user_role_id').on('change', function(){
     var role = $('#user_role_id').val();
     if (role != "") {

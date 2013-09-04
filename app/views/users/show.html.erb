@@ -14,16 +14,22 @@
     <p class="pro">
     <ul class="lili">
     <li><b>Име:</b> <%= @user.name %> </li>  
+    <% if current_user.role.present? && current_user.role.name != "Клиент" %>
     <li><b>Дейности:</b> <%= @user.activities.map{|activity| activity.name}.join(', ') %> </li>
+    <% end %>
     <li><b>Сфера:</b>  <%= @user.role.name %></li>
     <li><b>Град:</b> <%= @user.city.name %></li>
 <!--     <li>Телефон: <%= @user.phone %></li>
     <li>Портфолио:<img src="<%= @user.portfolio_file %>" ></li>
- --><li><b>Уеб сайт:</b> <%= @user.portfolio_link %> </li>
+
+ -->
+    <% if current_user.role.present? && current_user.role.name != "Клиент" %>
+    <li><b>Уеб сайт:</b> <%= @user.portfolio_link %> </li>
     <li><b>Описание:</b> <%= @user.portfolio_description %> </li>
     <li><b>Цена за час:</b> <%= @user.price %></li>
     </ul>
     </p>
+    <% end %>
   </br>
     <div align = "right">
     <% if current_user.id == @user.id %>
