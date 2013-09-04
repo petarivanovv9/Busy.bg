@@ -19,7 +19,7 @@ class AdsController < InheritedResources::Base
     ad.period = ad_params[:period]
     ad.city_id = ad_params[:city_id]
     ad.description = ad_params[:description]
-    ad.deadline = Date.new ad_params["deadline(1i)"].to_i, ad_params["deadline(2i)"].to_i, ad_params["deadline(3i)"].to_i
+    # ad.deadline = Date.new ad_params["deadline(1i)"].to_i, ad_params["deadline(2i)"].to_i, ad_params["deadline(3i)"].to_i
     ad.save
 
     ad_params[:ad_activities].each do |i|

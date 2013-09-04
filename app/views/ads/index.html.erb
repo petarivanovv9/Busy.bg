@@ -38,8 +38,9 @@
     <input type="submit" value="Търси", class="exit">
   </div>
   <% end %>
+  <% if current_user.role.present? && current_user.role.name == "Клиент" %>
   <%= link_to 'Направи обява', new_ad_path %>
-
+  <% end %>
 </br>
 </br>
 </br>

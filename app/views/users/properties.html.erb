@@ -11,19 +11,19 @@
   <div class="field">
     Сфера:<br />
     <%= f.select :role_id, Role.all.collect {|x| [x.name, x.id]}, {}, {:class => 'wrapper-dropdown-5'}  %>
-  </div>  
-
-  <div id='select-activity'>
-  </div>
-
-  <div>
-   Цена за час:<br />
-    <%= f.text_field :price, {:class => 'design11'}  %>
-  </div>
-
+  </div> 
+  
   <div>
    Телефон:<br />
    <%= f.text_field :phone, {:class => 'design11'}  %>
+  </div> 
+
+  <div id='select-activity'>
+  </div>
+  <% if current_user.role.present? && current_user.role.name != "Клиент" %>
+  <div>
+   Цена за час:<br />
+    <%= f.text_field :price, {:class => 'design11'}  %>
   </div>
 
   <div>
@@ -35,6 +35,7 @@
     Описание:<br />
     <%= f.text_area(:portfolio_description, :size => '30x2',:maxlength => "150", :class => 'design11') %>
   </div>
+  <% end %>
 
 <!--  <div>
   <%= f.label :portfolio_file %><br />

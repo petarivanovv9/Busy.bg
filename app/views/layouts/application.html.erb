@@ -72,7 +72,9 @@
 				<li class="current"><a href="<%= ads_path %>">Обяви</a></li>
 	 	 		<% if current_user.present? %>
 	 	 		<li class="current"><a href="<%= user_profile_path(user_id: current_user.id) %>">Профил</a></li>
+	 	 		<% if current_user.role.present? && current_user.role.name == "Клиент" %>
 	 	 		<li class="current"><a href="<%= new_ad_path %>">Направи обява</a></li>
+	 	 		<% end %>
 	 	 		<li class="current"><a href="<%= notifications_path %>">Известия</a></li>
 	 	 		<!-- <li class="current"><a href="<%=  %>">Съобщения</a></li> -->
 	 	 		<%end%>

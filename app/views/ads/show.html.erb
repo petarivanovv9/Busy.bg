@@ -35,11 +35,13 @@
   <b>Период:</b>
   <%= @ad.period %>
 </p>
-<% if current_user.id != @ad.user_id %>
-  <%= form_tag '/ads/apply', :method => :post do %>
+<% if current_user.role.present? && current_user.role.name != "Клиент" %>
+  <% if current_user.id != @ad.user_id %>
+    <%= form_tag '/ads/apply', :method => :post do %>
     <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
     <input id="button_apply" name="commit" type="submit" class="exit" value="Кандидатствай">
-  <% end %>
+    <% end %>
+  <% end %> 
 <% end %>
 <div id="apply_message" style="display: none;">
   Кандидатурата Ви е изпратена успешно.
