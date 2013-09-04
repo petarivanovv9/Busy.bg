@@ -126,7 +126,10 @@ $(document).ready(function(){
     
     $.post('/notifications_accept', {notification_id: notification_id}, function(response) {
       console.log('dasdasdasdasdasfas');
- 
+    $("#apply_notification").show();
+    $('.notification_accept').hide();
+    $('.notification_reject').hide();
+
     });
   });
 
@@ -137,6 +140,9 @@ $(document).ready(function(){
     
     $.post('/notifications_reject', {notification_id: notification_id}, function(response) {
       console.log('dasdasdasdasdasfas');
+      $("#reject_notification1").show();
+      $('.notification_accept').hide();
+      $('.notification_reject').hide();
     });
   });
 });

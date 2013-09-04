@@ -9,6 +9,7 @@
     <th></th>
     <th></th>
 
+
   </tr>
 
 <% @ad_apps.each do |ad_app| %> 
@@ -17,6 +18,18 @@
     <td><%= ad_app.user.name  %></td>
     <td><%= link_to 'Приеми', "", class: "notification_accept", 'data-app-id' => "#{ad_app.id}"  %></td>
     <td><%= link_to 'Откажи', "", class: "notification_reject", 'data-app-id' => "#{ad_app.id}"  %></td>
+
+<td> 
+      <div id="apply_notification" style="display: none;">
+        Вие успешно приехте кандидатурата!
+      </div>
+    </td> 
+    <td> 
+      <div id="reject_notification" style="display: none;">
+        Вие нe приехте кандидатурата!
+      </div>
+    </td>
+
   </tr>
 <% end %>
 </table>
