@@ -1,5 +1,5 @@
     <div class="wrapb">
-        <div class="section group">
+    <div class="section group">
     <div class="col span_1_of_4">
       <!-- <section class="contenta" id="a">
       <div>
@@ -8,24 +8,24 @@
     
     </section> -->
     </div>
-<div align = "right" class="col span_2_of_4">
+<div align = "center" class="col span_2_of_4">
       <section class="contenta">
-    <img src="http://lorempixel.com/300/300/people" class="round">  
+    <img src="http://store.picbg.net/pubpic/85/66/ea15226e827f8566.png" class="round">  
     <p class="pro">
     <ul class="lili">
-    <li>Име: <%= @user.name %> </li>  
-    <li>Дейности: <%= @user.activities.map{|activity| activity.name}.join(', ') %> </li>
-    <li>Сфера:  <%= @user.role.name %></li>
-    <li>Град: <%= @user.city.name %></li>
+    <li><b>Име:</b> <%= @user.name %> </li>  
+    <li><b>Дейности:</b> <%= @user.activities.map{|activity| activity.name}.join(', ') %> </li>
+    <li><b>Сфера:</b>  <%= @user.role.name %></li>
+    <li><b>Град:</b> <%= @user.city.name %></li>
 <!--     <li>Телефон: <%= @user.phone %></li>
     <li>Портфолио:<img src="<%= @user.portfolio_file %>" ></li>
- -->    <li>Уеб сайт: <%= @user.portfolio_link %> </li>
-    <li>Описание: <%= @user.portfolio_description %> </li>
-    <li>Цена за час: <%= @user.price %></li>
+ --><li><b>Уеб сайт:</b> <%= @user.portfolio_link %> </li>
+    <li><b>Описание:</b> <%= @user.portfolio_description %> </li>
+    <li><b>Цена за час:</b> <%= @user.price %></li>
     </ul>
     </p>
   </br>
-    <div>
+    <div align = "right">
     <% if current_user.id == @user.id %>
   <%=link_to 'Редактирай', '/users/properties' %>
   <!-- <ul>
@@ -75,6 +75,7 @@
     </section>
     </div> -->
 
+</div>
 </div>
 </div>
 

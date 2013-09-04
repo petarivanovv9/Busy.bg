@@ -7,7 +7,6 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,6 +30,9 @@ gem 'devise'
 gem 'carrierwave'
 gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'acts-as-messageable'
+gem 'rails-i18n', '~> 3.0.0.pre' # For 3.x
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

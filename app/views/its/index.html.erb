@@ -7,7 +7,7 @@
 <%= form_tag :method => :get do %>
 
   <center>
-  <p>ТЪРСИ СПЕЦИАЛИСТ:</p>
+  <p><b>ТЪРСИ СПЕЦИАЛИСТ:</b></p>
   </br>
   <div class="field">
     Град:<br />
@@ -39,7 +39,7 @@
   <% @its.each do |it| %>
     <li>
       <div class="novina">
-        <img src="images/pic.jpg" class="round2">
+        <img src="http://store.picbg.net/pubpic/85/66/ea15226e827f8566.png" class="round2">
         <a href = "/users/<%= it.id %>", class="viewprofile" > 
           <span>
             <p>Цена за час: <%= it.price %> лв. </p>
