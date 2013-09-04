@@ -44,58 +44,60 @@ $(document).ready(function(){
   var timelyrefreshnotifications = function(){
 
     $.noty.defaults = {
-    layout: 'topRight',
-    theme: 'defaultTheme',
-    type: 'information',
-    text: '',
-    dismissQueue: true, // If you want to use queue feature set this true
-    template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
-    animation: {
-        open: {height: 'toggle'},
-        close: {height: 'toggle'},
-        easing: 'swing',
-        speed: 500 // opening & closing animation speed
-    },
-    timeout: false, // delay for closing event. Set false for sticky notifications
-    force: false, // adds notification to the beginning of queue when set to true
-    modal: false,
-    maxVisible: 5, // you can set max visible notification for dismissQueue true option
-    closeWith: ['click'], // ['click', 'button', 'hover']
-    callback: {
+      layout: 'bottomRight',
+      theme: 'defaultTheme',
+      type: 'information',
+      text: '',
+      dismissQueue: true, // If you want to use queue feature set this true
+      template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+      animation: {
+          open: {height: 'toggle'},
+          // close: {height: 'toggle'},
+          easing: 'swing',
+          speed: 500 // opening & closing animation speed
+      },
+      timeout: false, // delay for closing event. Set false for sticky notifications
+      force: false, // adds notification to the beginning of queue when set to true
+      modal: false,
+      maxVisible: 1, // you can set max visible notification for dismissQueue true option
+      closeWith: ['click'], // ['click', 'button', 'hover']
+      callback: {
         onShow: function() {},
         afterShow: function() {},
         onClose: function() {},
         afterClose: function() {}
-    },
-    buttons: false // an array of buttons
-  };
+      },
+      buttons: false // an array of buttons
+    };
 
-  var n = noty({text: ''});
-      var url = '/check_for_notifications';
-      console.log('call ...');
+    // var n = noty({text: ''});
+    var url = '/check_for_notifications';
+    console.log('call ...');
 
-      // var notifications = '';
+  // var notifications = '';
 
-      $.get(url, function(data,status){
-        console.log(data);
-        
-        if (data.count > 0) {
-          var text = "Имате " + data.count + " нови кандидатсвания по Вашите обяви.";
-          var link = "<a href='/notifications'>" + text + "</a>";
-          n += link;
-        }
+    $.get(url, function(data,status){
+      console.log(data);
+      
+      if (data.count > 0) {
+        var text = "Имате " + data.count + " нови кандидатсвания по Вашите обяви.";
+        var link = "<a href='/notifications'>" + text + "</a>";
+        // n += link;
+        console.log(link); 
+        noty({text: link});
+      }
 
-        console.log('-----------------');
-        console.log(data.owner_phone);
+      console.log('-----------------');
+      console.log(data.owner_phone);
 
-        if ( typeof(data.owner_phone) != "undefined" && data.owner_phone.length > 0) {
-          var text = "Вашата кандидатура е приета успешно. Телефон за връзка: " + data.owner_phone;
-          var link = "<a href='/notifications'>" + text + "</a>";
-          n += link;
-        }
+      if ( typeof(data.owner_phone) != "undefined" && data.owner_phone.length > 0) {
+        var text = "Вашата кандидатура е приета успешно. Телефон за връзка: " + data.owner_phone;
+        var link = "<a href='/notifications'>" + text + "</a>";
+        // n += link;
+        noty({text: link});
+      }
 
-         $('.noty_message').html(n);
-      });
+    });
   };
   
   setInterval(timelyrefreshnotifications, 6000);

@@ -957,3 +957,10 @@ select {
     cursor:pointer;
 }
 
+.noty_text a {
+	color: white;
+}
+
+.noty_text {
+	color: white;	
+}
