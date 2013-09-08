@@ -4,15 +4,16 @@ class NotificationsController < ApplicationController
   def refresh
     result = {}
 
-    ad_ids = current_user.ads.map{|x| x.id}
-    @ad_app = AdApplication.where(ad_id: ad_ids, q_viewed: false)
-    
-    result[:count] = @ad_app.count
-    
-    @ad_app_accepted = AdApplication.where(user_id: current_user.id, status: "ACCEPTED").last
-    
-    result[:owner_phone] =  @ad_app_accepted.ad.user.phone if @ad_app_accepted.present?
+    if current_user.present?
+      ad_ids = current_user.ads.map{|x| x.id}
+      @ad_app = AdApplication.where(ad_id: ad_ids, q_viewed: false)
 
+      result[:count] = @ad_app.count
+
+      @ad_app_accepted = AdApplication.where(user_id: current_user.id, status: "ACCEPTED").last
+
+      result[:owner_phone] =  @ad_app_accepted.ad.user.phone if @ad_app_accepted.present?
+    end
 
     render json: result
   end
@@ -40,5 +41,5 @@ def reject
 
     render nothing: true
   end
-  
+
  end
