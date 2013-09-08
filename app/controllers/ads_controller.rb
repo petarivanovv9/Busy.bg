@@ -65,6 +65,7 @@ class AdsController < InheritedResources::Base
    ad_applications = AdApplication.new
    ad_applications.user_id = current_user.id
    ad_applications.ad_id = params[:ad_id]
+   ad_applications.status = 'APPLIED'
    ad_applications.save
 
    render nothing: true

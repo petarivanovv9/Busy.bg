@@ -41,13 +41,13 @@
   <% if current_user.id != @ad.user_id %>
     <%= form_tag '/ads/apply', :method => :post do %>
     <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
-    <input id="button_apply" name="commit" type="submit" class="exit" value="Кандидатствай">
+        <% unless current_user.ad_applications.where(ad_id: @ad.id, status: 'APPLIED')
+.present? %>
+          <input id="button_apply" name="commit" type="submit" class="exit" value="Кандидатствай">
+        <% end %>
     <% end %>
   <% end %> 
 <% end %>
-<div id="apply_message" style="display: none;">
-  Кандидатурата Ви е изпратена успешно.
-</div>
 <% if current_user.id == @ad.user_id %>
   <%= link_to 'Редактирай', edit_ad_path(@ad) %> |
 <% end %>

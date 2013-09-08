@@ -38,10 +38,6 @@
     <input type="submit" value="Търси", class="exit">
   </div>
   <% end %>
-  <% if current_user.role.present? && current_user.role.name == "Клиент" %>
-  <%= link_to 'Направи обява', new_ad_path %>
-  <% end %>
-</br>
 </br>
 </br>
 <table>
@@ -49,8 +45,8 @@
 <% @ads.each do |ad| %>
   <tr>
     <td><%=h truncate(ad.description, :length => 30)%></td>
-    <td><%= ad.user.try(:name) %></td>
-    <td><%= ad.city.try(:name) %></td>
+    <td style="padding:0 15px 0 15px;"><%= ad.user.try(:name) %></td>
+    <td style="padding:0 15px 0 15px;"><%= ad.city.try(:name) %></td>
     <% if current_user.present? %>
 
     <td style="padding:0 15px 0 15px;"><%= link_to 'Покажи', ad %></td>

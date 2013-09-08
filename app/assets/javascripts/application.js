@@ -99,7 +99,7 @@ $(document).ready(function(){
     });
   };
   
-  setInterval(timelyrefreshnotifications, 3000);
+  setInterval(timelyrefreshnotifications, 6000);
 
   $(".reply_link").click(function () {
     $("#reply_form").show("slow");
