@@ -2,55 +2,33 @@
       <div class="col span_1_of_4"> </div>
       <div class="col span_2_of_4"> 
          <section class="contenta">
-<table>
-  <tr>
-    <th>Описание</th>
-    <th>Потребител</th>
-    <th></th>
-    <th></th>
-
-
-  </tr>
-
+<center>
+  <h2>Кандидатствания по Вашите обяви</h2>
+</br>
+<table cellspacing="10">
 <% @ad_apps.each do |ad_app| %> 
   <tr>
-    <td><%= link_to ad_app.ad.description || "Описание", "/ads/#{ad_app.ad_id}" %></td>
+    <% if ad_app.status != 'ACCEPTED' && ad_app.status != 'REJECTED' %>
+    <td><%= ad_app.ad.description %></td>
     <td><%= ad_app.user.name  %></td>
-    <td><%= link_to 'Приеми', "", class: "notification_accept", 'data-app-id' => "#{ad_app.id}"  %></td>
-    <td><%= link_to 'Откажи', "", class: "notification_reject", 'data-app-id' => "#{ad_app.id}"  %></td>
-
-<td> 
-      <div id="apply_notification" style="display: none;">
-        Вие успешно приехте кандидатурата!
-      </div>
-    </td> 
-    <td> 
-      <div id="reject_notification" style="display: none;">
-        Вие нe приехте кандидатурата!
-      </div>
-    </td>
-
-  </tr>
+    <td><%= link_to 'Приеми', "", class: "notification_accept", 'data-app-id' => "#{ad_app.id}" %></td>
+    <td><%= link_to '  Откажи  ', "", class: "notification_reject", 'data-app-id' => "#{ad_app.id}" %></td>
+    <% end %>
 <% end %>
+</tr>
 </table>
-
 <% if current_user.role.present? && current_user.role.name != "Клиент" %>
 <table>
-  <tr>
-    <th>Описание</th>
-    <th>Име</th>
-    <th>Телефон: </th>
-  </tr>
-
-<% @ad_apps_accepted.each do |ad_app_accepted| %> 
-  <tr>
-    <td><%= link_to ad_app_accepted.ad.description || "Описание", "/ads/#{ad_app_accepted.ad_id}" %></td>
+  <% @ad_apps_accepted.each do |ad_app_accepted| %>
+  <tr> 
+    <td><%= ad_app_accepted.ad.description %></td>
     <td><%= ad_app_accepted.ad.user.name  %></td>
-    <td><%= ad_app_accepted.ad.user.phone  %></td>
+    <td><%= ad_app_accepted.ad.user.phone  %></td> 
   </tr>
-<% end %>
-<% end %>
+  <% end %>
 </table>
+<% end %>
+
 </center>
 </section>
 </div>

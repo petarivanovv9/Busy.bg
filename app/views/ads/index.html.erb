@@ -14,7 +14,7 @@
   <p><b>ТЪРСИ:</b></p>
 </br>
 
-      <div class="field" >
+    <div class="field" >
     Град:<br />
     <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]), { :class => 'wrapper-dropdown-5' }%>
    </div>
@@ -45,16 +45,6 @@
 </br>
 </br>
 <table>
-  <tr>
-    <th>Описание:</th>
-    <th>Потребител:</th>
-    <th>Град:</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-
 
 <% @ads.each do |ad| %>
   <tr>
@@ -62,7 +52,8 @@
     <td><%= ad.user.try(:name) %></td>
     <td><%= ad.city.try(:name) %></td>
     <% if current_user.present? %>
-    <td><%= link_to 'Покажи', ad %></td>
+
+    <td style="padding:0 15px 0 15px;"><%= link_to 'Покажи', ad %></td>
 <!--     <td><%= link_to 'Редактирай', edit_ad_path(ad) %></td>
     <td><%= link_to 'Изтрий', ad, method: :delete, data: { confirm: 'Потвърдете' } %></td> -->
     <% end %>
@@ -71,42 +62,6 @@
 </table>
 <br />
 </center>
-
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript">
-
-   function DropDown(el) {
-    this.dd = el;
-    this.initEvents();
-   }
-   DropDown.prototype = {
-    initEvents : function() {
-     var obj = this;
-
-     obj.dd.on('click', function(event){
-      $(this).toggleClass('active');
-      event.stopPropagation();
-     }); 
-    }
-   }
-
-   $(function() {
-
-    var dd = new DropDown( $('#dd') );
-
-    $(document).click(function() {
-     // all dropdowns
-     $('.wrapper-dropdown-5').removeClass('active');
-    });
-
-   });
-
-  </script>
-
-
-
-
 
 </section>
 </div>

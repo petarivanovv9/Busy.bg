@@ -99,7 +99,7 @@ $(document).ready(function(){
     });
   };
   
-  setInterval(timelyrefreshnotifications, 6000);
+  setInterval(timelyrefreshnotifications, 3000);
 
   $(".reply_link").click(function () {
     $("#reply_form").show("slow");
@@ -110,12 +110,12 @@ $(document).ready(function(){
     $(this).hide("slow");
   }); 
 
-  $('#button_apply').click(function(event) {
+$('#button_apply').click(function(event) {
     event.preventDefault();
 
     $.post('/ads/apply', {ad_id: $('#ad_id').val()}, function() {
-      $("#apply_message").show();
-      $('#button_apply').hide();
+     location.reload();
+     alert('Вие успешно кандидатствахте.');
     });
   });
 
@@ -125,11 +125,10 @@ $(document).ready(function(){
     var notification_id = $(this).data('app-id');
     
     $.post('/notifications_accept', {notification_id: notification_id}, function(response) {
-      console.log('dasdasdasdasdasfas');
-    $("#apply_notification").show();
-    $('.notification_accept').hide();
-    $('.notification_reject').hide();
 
+      // console.log('dasdasdasdasdasfas');
+    location.reload();
+    alert('Вие успешно приехте кандидатурата.');
     });
   });
 
@@ -139,10 +138,9 @@ $(document).ready(function(){
     var notification_id = $(this).data('app-id');
     
     $.post('/notifications_reject', {notification_id: notification_id}, function(response) {
-      console.log('dasdasdasdasdasfas');
-      $("#reject_notification1").show();
-      $('.notification_accept').hide();
-      $('.notification_reject').hide();
+      // console.log('dasdasdasdasdasfas');
+     location.reload();
+     alert('Вие отказахте кандидатурата.');
     });
   });
 });

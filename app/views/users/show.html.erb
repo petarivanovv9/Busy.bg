@@ -1,4 +1,4 @@
-    <div class="wrapb">
+<div class="wrapb">
     <div class="section group">
     <div class="col span_1_of_4">
       <!-- <section class="contenta" id="a">
@@ -41,41 +41,8 @@
     <div align = "right">
     <% if current_user.id == @user.id %>
   <%=link_to 'Редактирай', '/users/properties' %>
-  <!-- <ul>
-    <% @user.received_messages.each do |received_message| %>
-      <li>
-        <%= received_message.sent_messageable.name %> 
-        <%= received_message.topic %>
-        <%= received_message.body %>
-        <a class="reply_link" href="javascript:void(0)" data-message="<%= received_message.id %>">Reply</a>
-      </li>
-
-    <% end %>
-    
-    <%= form_tag '/reply_message', :method => :post, remote: true, :class => "message_form", style:"display: none", id:"reply_form" do %>
-    <input id="reply_message_id" type="hidden" name="message_id" value="">
-
-    <div>
-       <textarea rows="3" cols="30" name ="body"></textarea>
-    </div>
-    <div class="actions">
-      <input type="submit" value="Изпрати" class="exit">
-    </div>
   <% end %>
-<% else %>
-  <%= form_tag '/send_message', :method => :post, remote: true, :class => "message_form", id:"send_message_form" do %>
-    <input type="hidden" name="user_id" value="<%= @user.id %>">
 
-    <div>
-       <textarea rows="3" cols="30" name ="body"></textarea>
-    </div>
-    <div class="actions">
-      <input type="submit" value="Изпрати" class="exit">
-    </div>
-  <% end %>
-<% end %> 
-
-  </ul> -->
 </div>
   </section><!-- content -->
     </div>
@@ -91,10 +58,3 @@
 </div>
 </div>
 </div>
-
-
-
-
-  <!-- <form action = '/reply_message' style="display: none" id="reply_form">  -->
-  
-  

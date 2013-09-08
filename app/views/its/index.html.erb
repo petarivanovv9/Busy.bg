@@ -35,24 +35,28 @@
   <br />
 
   <ul class="bullet1">
-
   <% @its.each do |it| %>
     <li>
-      <div class="novina">
+      <div class="novina" style="word-wrap: break-word;">
         <img src="http://store.picbg.net/pubpic/85/66/ea15226e827f8566.png" class="round2">
-        <a href = "/users/<%= it.id %>", class="viewprofile" > 
+        <a href = "javascript:;" class="viewprofile" > 
           <span>
-            <p>Цена за час: <%= it.price %> лв. </p>
-            <p>Дейности: <%= it.activities.map{|activity| activity.name}.join(', ') %> </p>
+            <p><b>Цена за час:</b> <%= it.price %> лв. </p>
+            </br>
+            <p><b>Дейности:</b> <%= it.activities.map{|activity| activity.name}.join(', ') %> </p>
+            </br>
+            <p><b>Град:</b> <%= it.city.name %> </p>
+            </br>
+            <p><b>Уеб сайт:</b> <%= it.portfolio_link %> </p>
+            </br>
+            <p><b>Описание:</b> <%= it.portfolio_description %> </p>
           </span>
           <%= it.name %>
         </a>
       </div>
     </li>
   <% end %>
-
   </ul>
-  
   </section>
 </div>
 <div class="col span_1_of_4"> </div>

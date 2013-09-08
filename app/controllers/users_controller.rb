@@ -39,16 +39,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def send_message
-    current_user.send_message(User.find(params[:user_id]), { body: params[:body], topic: "topic" } )
+  # def send_message
+  #   current_user.send_message(User.find(params[:user_id]), { body: params[:body], topic: "topic" } )
   
-    redirect_to user_profile_path(User.find(params[:user_id]))   
-  end
+  #   redirect_to user_profile_path(User.find(params[:user_id]))   
+  # end
 
-  def reply_message
-    message = ActsAsMessageable::Message.find_by_id(params[:message_id])
-    current_user.reply_to(message, { body: params[:body], topic: "topic" } )
+  # def reply_message
+  #   message = ActsAsMessageable::Message.find_by_id(params[:message_id])
+  #   current_user.reply_to(message, { body: params[:body], topic: "topic" } )
 
-    render nothing: true
-  end
+  #   render nothing: true
+  # end
 end
