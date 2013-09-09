@@ -3,7 +3,9 @@
       <div class="col span_2_of_4"> 
          <section class="contenta">
 <center>
+<% if current_user.role.present? && current_user.role.name == "Клиент" %>
   <h2>Кандидатствания по Вашите обяви</h2>
+<% end %>
 </br>
 <table cellspacing="10">
 <% @ad_apps.each do |ad_app| %> 
