@@ -5,7 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,7 +28,7 @@ gem 'execjs'
 gem 'therubyracer', :platform => :ruby
 gem 'devise'
 gem 'carrierwave'
-gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'bcrypt-ruby'
 gem 'acts-as-messageable'
 gem 'rails-i18n', '~> 3.0.0.pre' # For 3.x
 
