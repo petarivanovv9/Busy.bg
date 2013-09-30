@@ -4,14 +4,13 @@
 	<style>
 		.menu { text-align:center; }
 		.menu ul li {display:inline;}
-	</style> 
+	</style>
 
 	<title> Busy.bg </title>
 
-	 
+
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-
 
 	<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
 	<!--[if lt IE 9]>
@@ -19,8 +18,7 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
  	<meta charset="utf-8">
-    <%= stylesheet_link_tag    "demo" %>
-    <%= stylesheet_link_tag    "style" %>
+    <%= stylesheet_link_tag    "application" %>
     <!--[if !IE 7]>
 		<style type="text/css">
 			#wrap {display:table;height:100%}
@@ -38,7 +36,7 @@
 			<div class="col span_1_of_5"> </div>
 			<div class="col span_1_of_5">
 				<div class="logo">
-					<a href="<%= root_path %>" id="range-logo"> Вход </a> 
+					<a href="<%= root_path %>" id="range-logo"> Вход </a>
 				</div>
 			</div>
 
@@ -49,12 +47,12 @@
 			<br />
 			<br />
 			<div style= "float:right;">
-				
+
 				<%  if current_user.present? %>
-				Добре дошли, 
+				Добре дошли,
 					<%= link_to current_user.name, user_profile_path(user_id: current_user.id) %>
 					<%= link_to 'Изход', destroy_user_session_path, method: :delete %>
-				<% else %> 
+				<% else %>
 			  		<%= link_to "Вход", '/users/sign_in' %>
 
 			  		<%= link_to "Регистрация", '/users/sign_up' %>
@@ -108,11 +106,11 @@
 	</div>
 </div>
 
-	
+
 
 <div id="notifications", style = "float:right;">
-	
-</div>	
+
+</div>
 
 
 
@@ -134,9 +132,9 @@
 <!-- 		<li><a href="<%=  %>">Съобщения</a></li> -->
 		<% end %>
 
-		</ul>	
+		</ul>
 	</div>
-	<p> Последвайте ни в социалните мрежи: <br/>	
+	<p> Последвайте ни в социалните мрежи: <br/>
 		<%= link_to image_tag("facebook.png"), "https://www.facebook.com/pages/Busybg/227411807409592?hc_location=timeline", target: '_blank' %>
 		<%= link_to image_tag("google.png"), "https://plus.google.com/113525049568122703633/posts?partnerid=gplp0", target: '_blank' %>
 		<%= link_to image_tag("twitter.png"), "https://twitter.com/busy_bg", target: '_blank' %>

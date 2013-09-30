@@ -71,7 +71,7 @@ margin:0;
 }
 .bottom{
 position: absolute;
-top: 10px; 
+top: 10px;
 right:10px;
 }
 .wrapmax{
@@ -238,7 +238,7 @@ background-image: linear-gradient(to bottom, #fff 0%, #108EDE 100%);
 	color:#fff;
 	font-weight:bold;
 	line-height:50px;
-	
+
 	}
 	/*Opera Fix*/
 body:before {
@@ -246,7 +246,7 @@ body:before {
 	height:100%;
 	float:left;
 	width:0;
-	margin-top:-32767px;/
+	margin-top:-32767px;
 }
 /*  SECTIONS  */
 .section {
@@ -255,7 +255,7 @@ body:before {
 	margin: 0px;
 }
 @media screen and (max-width: 600px) {
-   
+
 #content{
 width:100%;
 }
@@ -267,7 +267,7 @@ padding-top:50px;
 		position: relative;
 		min-height: 40px;
 		margin:0 auto;
-	}	
+	}
 	.nav ul {
 		width: 200px;
 		padding: 5px 0;
@@ -317,18 +317,18 @@ padding-top:50px;
 		left: 50%;
 		margin-left: -90px;
 	}
-	
+
 		.span_4_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_3_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_2_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_1_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_5_of_5 {
 	width: 100%;
@@ -342,7 +342,7 @@ padding-top:50px;
 .span_2_of_5 {
 	width: 100%;
 }
-	
+
 }
 
 /*  COLUMN SETUP  */
@@ -356,11 +356,11 @@ padding-top:50px;
 	width: 100%;
 }
 .span_2_of_3 {
-	width: 66.1%; 
+	width: 66.1%;
 }
 
 .span_1_of_3 {
-	width: 30%; 
+	width: 30%;
 }
 
 /*  GRID OF FOUR  */
@@ -381,11 +381,11 @@ padding-top:50px;
 }
 
 .span_4_of_5 {
-  	width: 79.68%; 
+  	width: 79.68%;
 }
 
 .span_3_of_5 {
-  	width: 59.36%; 
+  	width: 59.36%;
 }
 
 .span_2_of_5 {
@@ -411,10 +411,10 @@ text-align:center;
 }
 @media only screen and (max-width: 700px){
   	.span_3_of_3 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_2_of_3 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_1_of_3 {
 		width: 100%;
@@ -427,22 +427,22 @@ display:none;
 	display:none;
 	}
 	.span_2_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 }
 @media only screen and (max-width: 480px) {
 
 	.span_4_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_3_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_2_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 	.span_1_of_4 {
-		width: 100%; 
+		width: 100%;
 	}
 
 	.span_5_of_5 {
@@ -618,7 +618,7 @@ form:after {
 	left: -1px;
 	position: absolute;
 	width: 100%;
-	
+
 }
 .contenta:after {
 	-webkit-transform: rotate(2deg);
@@ -781,8 +781,8 @@ background-position: 10px -23px !important }
 	margin:0 auto;
 }
 
-.video-container iframe,  
-.video-container object,  
+.video-container iframe,
+.video-container object,
 .video-container embed {
 	position: absolute;
 	top: 0;
@@ -961,22 +961,22 @@ select {
 }
 
 .noty_text {
-	color: white;	
+	color: white;
 }
 input[type=checkbox].css-checkbox {
-							position: absolute; 
-							overflow: hidden; 
-							clip: rect(0 0 0 0); 
-							height:1px; 
-							width:1px; 
-							margin:-1px; 
+							position: absolute;
+							overflow: hidden;
+							clip: rect(0 0 0 0);
+							height:1px;
+							width:1px;
+							margin:-1px;
 							padding:0;
 							border:0;
 						}
 
 						input[type=checkbox].css-checkbox + label.css-label {
 							padding-left:20px;
-							height:15px; 
+							height:15px;
 							display:inline-block;
 							line-height:15px;
 							background-repeat:no-repeat;
@@ -989,5 +989,5 @@ input[type=checkbox].css-checkbox {
 						input[type=checkbox].css-checkbox:checked + label.css-label {
 							background-position: 0 -15px;
 						}
-						
+
 						  .css-label{ background-image:url(http://csscheckbox.com/checkboxes/dark-check-cyan.png); }

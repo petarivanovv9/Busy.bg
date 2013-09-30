@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./noty
+
 $(document).ready(function(){
 
   $('#user_role_id').on('change', function(){
@@ -30,7 +31,7 @@ $(document).ready(function(){
             opt.attr('type','checkbox');
             opt.attr('name','activity_id[]');
             activities.append(value['name'])
-            opt.appendTo(activities);  
+            opt.appendTo(activities);
           });
         }
       });
@@ -77,12 +78,12 @@ $(document).ready(function(){
 
     $.get(url, function(data,status){
       console.log(data);
-      
+
       if (data.count > 0) {
         var text = "Имате " + data.count + " нови кандидатсвания по Вашите обяви.";
         var link = "<a href='/notifications'>" + text + "</a>";
         // n += link;
-        console.log(link); 
+        console.log(link);
         noty({text: link});
       }
 
@@ -98,17 +99,17 @@ $(document).ready(function(){
 
     });
   };
-  
+
   setInterval(timelyrefreshnotifications, 6000);
 
   $(".reply_link").click(function () {
     $("#reply_form").show("slow");
     $("#reply_message_id").val($(this).data("message"));
-  });  
+  });
 
   $('.message_form').submit(function(e) {
     $(this).hide("slow");
-  }); 
+  });
 
 $('#button_apply').click(function(event) {
     event.preventDefault();
@@ -123,7 +124,7 @@ $('#button_apply').click(function(event) {
     event.preventDefault();
 
     var notification_id = $(this).data('app-id');
-    
+
     $.post('/notifications_accept', {notification_id: notification_id}, function(response) {
 
       // console.log('dasdasdasdasdasfas');
@@ -136,7 +137,7 @@ $('#button_apply').click(function(event) {
     event.preventDefault();
 
     var notification_id = $(this).data('app-id');
-    
+
     $.post('/notifications_reject', {notification_id: notification_id}, function(response) {
       // console.log('dasdasdasdasdasfas');
      location.reload();
