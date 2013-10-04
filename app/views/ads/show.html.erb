@@ -37,20 +37,28 @@
   <%= @ad.period %>
 </p>
 </br>
-<% if current_user.role.present? && current_user.role.name != "Клиент" %>
-  <% if current_user.id != @ad.user_id %>
-    <%= form_tag '/ads/apply', :method => :post do %>
-    <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
-        <% unless current_user.ad_applications.where(ad_id: @ad.id, status: 'APPLIED')
-.present? %>
+
+  <% if current_user.role.present? && current_user.role.name != "Клиент" %>
+    <% if current_user.id != @ad.user_id %>
+      <%= form_tag '/ads/apply', :method => :post do %>
+      <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
+        <% unless  current_user.ad_applications.where(ad_id: @ad.id, status: 'ACKNOWLEDGED').present? %> 
+          <% unless current_user.ad_applications.where(ad_id: @ad.id, status: 'APPLIED')
+          .present? %>
           <input id="button_apply" name="commit" type="submit" class="exit" value="Кандидатствай">
-        <% end %>
-    <% end %>
-  <% end %> 
-<% end %>
+          <% end %>
+        <% end %> 
+      <% end %>
+    <% end %> 
+  <% end %>
 <% if current_user.id == @ad.user_id %>
-  <%= link_to 'Редактирай', edit_ad_path(@ad) %> |
+  <%= link_to 'Редактирай', edit_ad_path(@ad) %> 
+</br>
+</br>
+  <%= link_to 'Изтрий', @ad, method: :delete, data: { confirm: 'Изтриване на обявата?' } %>
 <% end %>
+</br>
+</br>
 <%= link_to 'Назад', ads_path %>
 </center>
 </section>

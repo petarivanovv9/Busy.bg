@@ -26,7 +26,7 @@ $(document).ready(function(){
           var activities = $('#select-activity');
           activities.html('');
           $.each(data, function(index, value) {
-            var opt = $('<input>');
+            var opt = $('<input><br>');
             opt.attr('value', value['id']);
             opt.attr('type','checkbox');
             opt.attr('name','activity_id[]');

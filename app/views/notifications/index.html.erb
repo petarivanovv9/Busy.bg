@@ -10,7 +10,7 @@
 <table cellspacing="10">
 <% @ad_apps.each do |ad_app| %> 
   <tr>
-    <% if ad_app.status != 'ACCEPTED' && ad_app.status != 'REJECTED' %>
+    <% if ad_app.status != 'ACCEPTED' && ad_app.status != 'REJECTED' && ad_app.status != 'ACKNOWLEDGED'%>
     <td><%= ad_app.ad.description %></td>
     <td><%= ad_app.user.name  %></td>
     <td><%= link_to 'Приеми', "", class: "notification_accept", 'data-app-id' => "#{ad_app.id}" %></td>
@@ -20,7 +20,7 @@
 </tr>
 </table>
 <% if current_user.role.present? && current_user.role.name != "Клиент" %>
-<table>
+<table cellspacing = "10">
   <% @ad_apps_accepted.each do |ad_app_accepted| %>
   <tr> 
     <td><%= ad_app_accepted.ad.description %></td>

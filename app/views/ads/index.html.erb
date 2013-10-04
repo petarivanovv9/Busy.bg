@@ -19,11 +19,10 @@
     <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]), { :class => 'wrapper-dropdown-5' }%>
    </div>
 </br>
-  <div id="dd" class="field">
+<div class="field">
     Дейности:<br />
-    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]), { :class => 'wrapper-dropdown-5' } %>
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]), {:class => 'wrapper-dropdown-5'} %>
   </div>
-
  
   <!-- <div>
     Минимална цена:<br />

@@ -1,11 +1,12 @@
+# encoding: UTF-8
 TheBusyNet::Application.routes.draw do
   resources :ads
   
   root to: 'menu#index'
 
-  match "/teachers", to: 'its#index', :role => 'Teacher'
-  match "/its", to: 'its#index', :role =>  'IT'
-  match "/accountants", to: 'its#index', :role =>  'Accountant'
+  match "/teachers", to: 'its#index', :role => 'Учител'
+  match "/its", to: 'its#index', :role =>  'ИТ специалист'
+  match "/accountants", to: 'its#index', :role =>  'Счетоводител'
 
   devise_for :users
   match "users/properties", to: 'users#properties',  as: 'currnet_user_properties', via: :get
