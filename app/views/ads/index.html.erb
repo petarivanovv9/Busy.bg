@@ -1,0 +1,65 @@
+
+
+
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
+<center>
+<h2>Обяви</h2>
+<%= form_tag('/ads', :method => :get) do %>  
+
+</br>
+</br>
+  <p><b>ТЪРСИ:</b></p>
+</br>
+
+    <div class="field" >
+    Град:<br />
+    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]), { :class => 'wrapper-dropdown-5' }%>
+   </div>
+</br>
+<div class="field">
+    Дейности:<br />
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]), {:class => 'wrapper-dropdown-5'} %>
+  </div>
+ 
+  <!-- <div>
+    Минимална цена:<br />
+    <%= text_field_tag(:min_price) %>
+  </div>
+  <div>
+    Максимална цена:<br />
+    <%= text_field_tag(:max_price) %>
+  </div> -->
+
+  <div  class="actions">
+    <input type="submit" value="Търси", class="exit">
+  </div>
+  <% end %>
+</br>
+</br>
+<table>
+
+<% @ads.each do |ad| %>
+  <tr>
+    <td><%=h truncate(ad.description, :length => 30)%></td>
+    <td style="padding:0 15px 0 15px;"><%= ad.user.try(:name) %></td>
+    <td style="padding:0 15px 0 15px;"><%= ad.city.try(:name) %></td>
+    <% if current_user.present? %>
+
+    <td style="padding:0 15px 0 15px;"><%= link_to 'Покажи', ad %></td>
+<!--     <td><%= link_to 'Редактирай', edit_ad_path(ad) %></td>
+    <td><%= link_to 'Изтрий', ad, method: :delete, data: { confirm: 'Потвърдете' } %></td> -->
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<br />
+</center>
+
+</section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>
+  

@@ -1,0 +1,27 @@
+<div class="section group">
+    <div class="col span_1_of_4"> </div>
+    <div class="col span_2_of_4">
+      <section id="content">
+        <h1> Вход </h1>
+<%= form_for("user", :url => user_session_path) do |f| %>
+<div>
+  <%= f.email_field :email, :autofocus => true, :class => "text-field", :placeholder => "Електронна поща" %>
+</div>
+<div>
+  <%= f.password_field :password, :class => "text-field2", :placeholder => "Парола" %>
+ </div>
+  <%= f.check_box :remember_me %>
+  Запомни ме 
+
+  <div> <input type="submit" value="Вход", class="button"> 
+  <%= link_to "Забравена парола", new_password_path('user') %>
+  <%= link_to "Регистрация", " /users/sign_up" %>
+  </div>
+<% end %> 
+      </section><!-- content -->
+    </div>
+    <div class="col span_1_of_4"></div>
+</div>
+
+
+

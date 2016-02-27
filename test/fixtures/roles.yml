@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  teacher: MyText
+  softwareEngineer: MyText
+  accountast: MyText
+  searcher: MyText
+  id: 1
+
+two:
+  teacher: MyText
+  softwareEngineer: MyText
+  accountast: MyText
+  searcher: MyText
+  id: 1

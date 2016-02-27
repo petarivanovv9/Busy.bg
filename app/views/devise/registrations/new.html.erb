@@ -1,0 +1,33 @@
+<div class="section group">
+    <div class="col span_1_of_4"> </div>
+<div class="col span_2_of_4">
+      <section id="content">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :action => ""  }) do |f| %>
+  <%= devise_error_messages! %>
+      <h1>Регистрация </h1>
+      <div>
+        <%= f.text_field :name, :autofocus => true, :class=>"text-field", :placeholder=>"Име и фамилия", :id=>"username" %>
+      </div>
+       <div>
+        <%= f.email_field :email, :autofocus => true, :class=>"text-field1", :placeholder=>"Електронна поща", :id=>"mail" %>
+      </div>
+      <div>
+        <%= f.password_field :password, :class=>"text-field2", :placeholder=>"Парола", :id=>"password" %>
+      </div>
+        <div>
+        <%= f.password_field :password_confirmation, :class=>"text-field2", :placeholder=>"Повтори парола", :id=>"password" %>
+      </div>
+      <div>
+        <input type="submit" value="Регистрация" />
+      </div>
+     <!-- <%= render "devise/shared/links" %> -->
+<% end %>
+  </section><!-- content -->
+    </div>
+    <div class="col span_1_of_4"></div>
+  </div>
+
+
+
+<br />
+<br />

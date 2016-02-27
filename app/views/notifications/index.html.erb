@@ -1,0 +1,38 @@
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
+<center>
+<% if current_user.role.present? && current_user.role.name == "Клиент" %>
+  <h2>Кандидатствания по Вашите обяви</h2>
+<% end %>
+</br>
+<table cellspacing="10">
+<% @ad_apps.each do |ad_app| %> 
+  <tr>
+    <% if ad_app.status != 'ACCEPTED' && ad_app.status != 'REJECTED' && ad_app.status != 'ACKNOWLEDGED'%>
+    <td><%= ad_app.ad.description %></td>
+    <td><%= ad_app.user.name  %></td>
+    <td><%= link_to 'Приеми', "", class: "notification_accept", 'data-app-id' => "#{ad_app.id}" %></td>
+    <td><%= link_to '  Откажи  ', "", class: "notification_reject", 'data-app-id' => "#{ad_app.id}" %></td>
+    <% end %>
+<% end %>
+</tr>
+</table>
+<% if current_user.role.present? && current_user.role.name != "Клиент" %>
+<table cellspacing = "10">
+  <% @ad_apps_accepted.each do |ad_app_accepted| %>
+  <tr> 
+    <td><%= ad_app_accepted.ad.description %></td>
+    <td><%= ad_app_accepted.ad.user.name  %></td>
+    <td><%= ad_app_accepted.ad.user.phone  %></td> 
+  </tr>
+  <% end %>
+</table>
+<% end %>
+
+</center>
+</section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>

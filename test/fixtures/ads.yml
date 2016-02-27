@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  max_price: 1
+  city_id: 1
+  deadline: 2013-07-17
+  period: 
+
+two:
+  user_id: 1
+  max_price: 1
+  city_id: 1
+  deadline: 2013-07-17
+  period: 

@@ -1,0 +1,28 @@
+    <div class="wrapb">
+    <div class="section group">
+    <div class="col span_1_of_4">
+     
+    </div>
+<div align = "center" class="col span_2_of_4">
+      <section id="content">
+        <h1> Забравена парола </h1>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div>
+  <%= f.email_field :email, :autofocus => true, :class => "text-field", :placeholder => "Електронна поща" %>
+</div>
+
+  <div><%= f.submit "Изпрати" %></div>
+<% end %>
+
+</div>
+  </section><!-- content -->
+    </div>
+    <div class="col span_1_of_4">
+
+
+</div>
+</div>
+</div>

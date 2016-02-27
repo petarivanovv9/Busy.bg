@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  math: MyText
+  web: MyText
+  mobile: MyText
+  history: MyText
+  id: 1
+
+two:
+  math: MyText
+  web: MyText
+  mobile: MyText
+  history: MyText
+  id: 1

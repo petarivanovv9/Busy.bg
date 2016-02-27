@@ -1,0 +1,10 @@
+<% @ad_app.each do |ad| %>  
+  <dl>
+    <dt>name :</dt>
+    <dd><%= link_to 'Show ad', "/ads/#{ad.ad_id}" %></dd>
+    <dt>ad:</dt>
+    <dd><%= ad.user_id %></dd>
+  </dl>
+<% end %>
+
+

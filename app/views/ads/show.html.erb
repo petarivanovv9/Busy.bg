@@ -1,0 +1,67 @@
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
+
+
+<p id="notice"><%= notice %></p>
+<center>
+<p>
+</br>
+  <div align = "center" style="word-wrap: break-word; width: 300px">
+  <b>Описание:</b><%= @ad.description %> 
+  </div>
+</p>
+</br>
+<p>
+  <b>Потребител:</b>
+  <%= @ad.user.name %>
+</p>
+</br>
+<p>
+  <b>Цена за час:</b>
+  <%= @ad.max_price %>
+</p>
+</br>
+<p>
+  <b>Град:</b>
+  <%= @ad.city.name %>
+</p>
+<!-- <p>
+  <b>Крайна дата:</b>
+  <%= @ad.deadline %>
+</p> -->
+</br>
+<p>
+  <b>Период (в дни):</b>
+  <%= @ad.period %>
+</p>
+</br>
+
+  <% if current_user.role.present? && current_user.role.name != "Клиент" %>
+    <% if current_user.id != @ad.user_id %>
+      <%= form_tag '/ads/apply', :method => :post do %>
+      <%= hidden_field_tag "ad_id", "#{@ad.id}" %>
+        <% unless  current_user.ad_applications.where(ad_id: @ad.id, status: 'ACKNOWLEDGED').present? %> 
+          <% unless current_user.ad_applications.where(ad_id: @ad.id, status: 'APPLIED')
+          .present? %>
+          <input id="button_apply" name="commit" type="submit" class="exit" value="Кандидатствай">
+          <% end %>
+        <% end %> 
+      <% end %>
+    <% end %> 
+  <% end %>
+<% if current_user.id == @ad.user_id %>
+  <%= link_to 'Редактирай', edit_ad_path(@ad) %> 
+</br>
+</br>
+  <%= link_to 'Изтрий', @ad, method: :delete, data: { confirm: 'Изтриване на обявата?' } %>
+<% end %>
+</br>
+</br>
+<%= link_to 'Назад', ads_path %>
+</center>
+</section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>

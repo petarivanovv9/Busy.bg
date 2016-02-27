@@ -1,0 +1,60 @@
+<div class="wrapb">
+    <div class="section group">
+    <div class="col span_1_of_4">
+      <!-- <section class="contenta" id="a">
+      <div>
+      <p>Your AD here !</p>
+      </div>
+    
+    </section> -->
+    </div>
+<div align = "center" class="col span_2_of_4">
+      <section class="contenta">
+    <img src="http://store.picbg.net/pubpic/85/66/ea15226e827f8566.png" class="round">  
+    <p class="pro">
+    <ul class="lili">
+    <li><b>Име:</b> <%= @user.name %> </li>  
+    <% if current_user.role.present? && current_user.role.name != "Клиент" %>
+    <li><b>Дейности:</b> <%= @user.activities.map{|activity| activity.name}.join(', ') %> </li>
+    <% end %>
+    <li><b>Сфера:</b>  <%= @user.role.name %></li>
+    <li><b>Град:</b> <%= @user.city.name %></li>
+<!--     <li>Телефон: <%= @user.phone %></li>
+    <li>Портфолио:<img src="<%= @user.portfolio_file %>" ></li>
+
+ -->
+    <% if current_user.role.present? && current_user.role.name != "Клиент" %>
+    <li><b>Уеб сайт:</b> <%= @user.portfolio_link %> </li>
+    <li><b>Цена за час:</b> <%= @user.price %></li>  
+  </br>
+  </br>
+  </br>
+  </br>
+    <div align = "center" style="word-wrap: break-word; width: 300px">
+      <b>Описание:</b> <%= @user.portfolio_description %> 
+    </div>
+    
+    </ul>
+    </p>
+    <% end %>
+  </br>
+    <div align = "right">
+    <% if current_user.id == @user.id %>
+  <%=link_to 'Редактирай', '/users/properties' %>
+  <% end %>
+
+</div>
+  </section><!-- content -->
+    </div>
+    <div class="col span_1_of_4">
+  <!--     <section class="contenta" id="c">
+      <div>
+    <p>Your AD here !</p>
+      </div>
+    
+    </section>
+    </div> -->
+
+</div>
+</div>
+</div>

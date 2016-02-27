@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.menu { text-align:center; }
+		.menu ul li {display:inline;}
+	</style>
+
+	<title> Busy.bg </title>
+
+
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+ 	<meta charset="utf-8">
+ 
+    <%= stylesheet_link_tag    "demo" %>
+    <%= stylesheet_link_tag    "style" %>
+
+</head>
+<body>
+	<!-- <p class="notice"><%= notice %></p> -->
+	<!-- <p class="alert"><%= alert %></p> -->
+<meta http-equiv="pragma" content="no-cache">
+<div class="big">
+	<div class="wrapmax">
+		<div class="section group">
+			<div class="col span_1_of_5"> </div>
+			<div class="col span_1_of_5"> </div>
+			<div class="col span_1_of_5">
+				<div class="logo">
+					<a href="<%= root_path %>" id="range-logo"> Вход </a>
+				</div>
+			</div>
+
+			<div class="col span_1_of_5"> </div>
+
+			<div class="col span_1_of_5"> </div>
+			<br />
+			<br />
+			<br />
+			<div style= "float:right;">
+
+				<%  if current_user.present? %>
+				Добре дошли,
+					<%= link_to current_user.name, user_profile_path(user_id: current_user.id) %>
+					<%= link_to 'Изход', destroy_user_session_path, method: :delete %>
+				<% else %>
+			  		<%= link_to "Вход", '/users/sign_in' %>
+
+			  		<%= link_to "Регистрация", '/users/sign_up' %>
+				<% end %>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<div class="wrap">
+		<nav class="nav right">
+			<ul>
+				<li class="current"><a href="<%= root_path %>">Начало</a></li>
+				<li class="current"><a href="<%= ads_path %>">Обяви</a></li>
+	 	 		<% if current_user.present? %>
+	 	 		<li class="current"><a href="<%= user_profile_path(user_id: current_user.id) %>">Профил</a></li>
+	 	 		<% if current_user.role.present? && current_user.role.name == "Клиент" %>
+	 	 		<li class="current"><a href="<%= new_ad_path %>">Направи обява</a></li>
+	 	 		<% end %>
+	 	 		<li class="current"><a href="<%= notifications_path %>">Известия</a></li>
+	 	 		<%end%>
+			</ul>
+		</nav>
+</div>
+
+
+<div class="section group">
+	</br>
+	<div class="col span_1_of_3">
+			<ul class="tt-wrapper2">
+				<li>
+					<a class="tt-twitter"  href="/its"><span>Към ИТ специалисти.</span></a>
+				</li>
+			</ul>
+	</div>
+	<div class="col span_1_of_3">
+		<ul class="tt-wrapper2">
+			<li>
+				<a class="tt-gplus"  href="/teachers"><span>Към учители.</span></a>
+			</li>
+		</ul>
+	</div>
+	<div class="col span_1_of_3">
+		<ul class="tt-wrapper2">
+			<li>
+				<a class="tt-dribbble"  href="/accountants"><span>Към счетоводители.</span></a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+
+<div id="notifications", style = "float:right;">
+
+</div>
+
+
+
+	<%= yield %>
+
+
+
+<div id="footer">
+	<div class="umri">
+		<ul class="umretegoveda">
+		<li><a href="<%= root_path %>">Начало</a></li>
+		<li><a href="<%= ads_path %>">Обяви</a></li>
+		<% if current_user.present? %>
+		<li><a href="<%= user_profile_path(user_id: current_user.id) %>">Профил</a></li>
+			<% if current_user.role.present? && current_user.role.name == "Клиент" %>
+				<li><a href="<%= new_ad_path %>">Направи обява</a></li>
+			<% end %>
+		<li><a href="<%= notifications_path %>">Известия</a></li>
+<!-- 		<li><a href="<%=  %>">Съобщения</a></li> -->
+		<% end %>
+
+		</ul>
+	</div>
+	<p> Последвайте ни в социалните мрежи: <br/>
+		<%= link_to image_tag("facebook.png"), "https://www.facebook.com/pages/Busybg/227411807409592?hc_location=timeline", target: '_blank' %>
+		<%= link_to image_tag("google.png"), "https://plus.google.com/113525049568122703633/posts?partnerid=gplp0", target: '_blank' %>
+		<%= link_to image_tag("twitter.png"), "https://twitter.com/busy_bg", target: '_blank' %>
+	</p>
+	<p> All copyrights reserved. <a href="<%= root_path %>"> Busy.bg </a> 2013 </p>
+</div>
+
+</body>
+</html>

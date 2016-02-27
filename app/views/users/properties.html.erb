@@ -1,0 +1,57 @@
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
+<center>
+<%= form_for(@it, :url => "/users/profile", :multipart => true)   do |f| %>
+  <div class="field">
+    Град:<br />
+    <%= f.select :city_id, City.all.collect {|x| [x.name, x.id]}, {}, { :class => 'wrapper-dropdown-5' } %>
+  </div>
+</br>
+  <div class="field">
+    Сфера:<br />
+    <%= f.select :role_id, Role.all.collect {|x| [x.name, x.id]}, {}, {:prompt => "Please select", :class => 'wrapper-dropdown-5' } %>
+  </div> 
+  
+</br>
+  <div id='select-activity'>
+  </div>
+</br>
+  <div>
+   Телефон:<br />
+   <%= f.text_field :phone, {:class => 'design11'}  %>
+  </div> 
+
+  </br>
+  <% if current_user.role.present? && current_user.role.name != "Клиент" %>
+  <div>
+   Цена за час:<br />
+    <%= f.text_field :price, {:class => 'design11'}  %>
+  </div>
+</br>
+  <div>
+    Уеб сайт:<br />
+    <%= f.text_field :portfolio_link, {:class => 'design11'}  %>
+  </div>
+ </br>
+  <div>
+    Описание:<br />
+    <%= f.text_area(:portfolio_description, :size => '30x2',:maxlength => "150", :class => 'design11') %>
+  </div>
+  <% end %>
+
+<!--  <div>
+  <%= f.label :portfolio_file %><br />
+  <%= f.file_field :portfolio_file %>
+ </div> -->
+  
+  <div class="actions">
+    <input type="submit" value="Обнови", class="exit">
+  </div>
+<% end %>
+</center>
+</section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>

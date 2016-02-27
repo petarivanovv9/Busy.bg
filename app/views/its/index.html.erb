@@ -1,0 +1,63 @@
+<div class="section group">
+      <div class="col span_1_of_4"> </div>
+      <div class="col span_2_of_4"> 
+         <section class="contenta">
+
+
+<%= form_tag :method => :get do %>
+
+  <center>
+  <p><b>ТЪРСИ СПЕЦИАЛИСТ:</b></p>
+  </br>
+  <div class="field">
+    Град:<br />
+    <%=select_tag "city_id", options_from_collection_for_select( @cities, "id", "name", params[:city_id]), {:class => 'wrapper-dropdown-5'} %>
+  </div>
+  </br>
+  <div class="field">
+    Дейности:<br />
+    <%=select_tag "activity_id", options_from_collection_for_select( @activities, "id", "name", params[:activity_id]), {:class => 'wrapper-dropdown-5'} %>
+  </div>
+<!--   <div>
+    Минимална цена:<br />
+    <%= text_field_tag(:min_price) %>
+  </div>
+  <div>
+    Максимална цена:<br />
+    <%= text_field_tag(:max_price) %>
+  </div> -->
+
+  <div class="actions" >
+    <input type="submit" value="Търси", class="exit">
+  </div>
+</center>
+<% end %>
+  <br />
+
+  <ul class="bullet1">
+  <% @its.each do |it| %>
+    <li>
+      <div class="novina" style="word-wrap: break-word;">
+        <img src="http://store.picbg.net/pubpic/85/66/ea15226e827f8566.png" class="round2">
+        <a href = "javascript:;" class="viewprofile" > 
+          <span>
+            <p><b>Цена за час:</b> <%= it.price %> лв. </p>
+            </br>
+            <p><b>Дейности:</b> <%= it.activities.map{|activity| activity.name}.join(', ') %> </p>
+            </br>
+            <p><b>Град:</b> <%= it.city.name %> </p>
+            </br>
+            <p><b>Уеб сайт:</b> <%= it.portfolio_link %> </p>
+            </br>
+            <p><b>Описание:</b> <%= it.portfolio_description %> </p>
+          </span>
+          <%= it.name %>
+        </a>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  </section>
+</div>
+<div class="col span_1_of_4"> </div>
+</div>
